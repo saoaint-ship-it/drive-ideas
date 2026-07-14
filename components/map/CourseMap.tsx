@@ -1,0 +1,38 @@
+"use client";
+
+import dynamic from "next/dynamic";
+import type { CourseMapProps } from "@/components/map/types";
+
+// ページから使う唯一の地図入口。
+// NEXT_PUBLIC_MAP_PROVIDER=google | maplibre で実装を切り替える（未設定時は maplibre）。
+// GoogleのAPIキーが無い場合も maplibre にフォールバックし、キーなしで必ず動く。
+
+const MapLibreMap = dynamic(
+  () => import("@/components/map/providers/MapLibreMap"),
+  { ssr: false, loading: () => <MapLoading /> }
+);
+
+const GoogleMap = dynamic(
+  () => import("@/components/map/providers/GoogleMap"),
+  { ssr: false, loading: () => <MapLoading /> }
+);
+
+function MapLoading() {
+  return (
+    <div className="flex h-full w-full items-center justify-center bg-surface">
+      <span className="font-mono text-[10px] tracking-[0.3em] text-muted">
+        LOADING MAP
+      </span>
+    </div>
+  );
+}
+
+export default function CourseMap(props: CourseMapProps) {
+  const provider = process.env.NEXT_PUBLIC_MAP_PROVIDER ?? "maplibre";
+  const hasGoogleKey = Boolean(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY);
+
+  if (provider === "google" && hasGoogleKey) {
+    return <GoogleMap {...props} />;
+  }
+  return <MapLibreMap {...props} />;
+}

@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+/* 白基調のデザイントークン。
+   ink = ベース背景（生成り寄りの白） / paper = 反転セクション（黒）
+   写真上のテキストは各コンポーネント側で白を明示する */
+:root {
+  --ink: #fafaf8;
+  --surface: #f0efeb;
+  --paper: #0a0a0a;
+  --text: #1a1a1a;
+  --muted: #757068;
+  --line: rgba(20, 20, 20, 0.12);
+  --signal: #c9362e;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-surface: var(--surface);
+  --color-paper: var(--paper);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-signal: var(--signal);
+  --font-display: var(--font-inter-tight), sans-serif;
+  --font-sans: var(--font-noto-sans-jp), sans-serif;
+  --font-mono: var(--font-roboto-mono), monospace;
+  --radius: 0;
+}
+
+body {
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--font-noto-sans-jp), sans-serif;
+  font-feature-settings: "palt";
+}
+
+/* 本文はゆったりした行間 */
+.prose-jp {
+  line-height: 1.9;
+}
+
+/* 英字ディスプレイ（字間をやや詰める） */
+.font-display {
+  font-family: var(--font-inter-tight), sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* 小さな英字ラベル（グレー・字間広め・大文字） */
+.label-en {
+  font-family: var(--font-inter-tight), sans-serif;
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* スクロールで下から10px + フェードイン */
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 画像ホバー */
+.img-hover {
+  overflow: hidden;
+}
+.img-hover img,
+.img-hover video {
+  transition: transform 0.6s ease-out;
+}
+.img-hover:hover img,
+.img-hover:hover video {
+  transform: scale(1.03);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .img-hover:hover img,
+  .img-hover:hover video {
+    transform: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* キーボードフォーカスリングは消さない */
+:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
