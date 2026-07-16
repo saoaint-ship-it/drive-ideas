@@ -9,6 +9,7 @@ import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import { getAllCourses, getCourseBySlug, getRelatedCourses } from "@/lib/courses";
 import { publicFileExists } from "@/lib/files";
+import { site } from "@/config/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -20,9 +21,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const course = getCourseBySlug(slug);
   if (!course) return {};
+  const title = `${course.name}（${course.prefectures.join("・")}）`;
   return {
-    title: `${course.name}（${course.prefectures.join("・")}）`,
+    title,
     description: course.summary,
+    alternates: { canonical: `/courses/${course.slug}` },
+    openGraph: {
+      type: "article",
+      title,
+      description: course.summary,
+      url: `/courses/${course.slug}`,
+      images: [course.heroImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: course.summary,
+      images: [course.heroImage],
+    },
   };
 }
 
@@ -40,8 +56,48 @@ export default async function CourseDetailPage({ params }: Props) {
     return publicFileExists(p) ? p : null;
   });
 
+  // SEO: このコースの構造化データ。観光スポット + パンくず
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "TouristAttraction",
+      name: course.name,
+      description: course.summary,
+      image: `${site.url}${course.heroImage}`,
+      address: {
+        "@type": "PostalAddress",
+        addressRegion: course.prefectures.join("・"),
+        addressCountry: "JP",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: course.center.lat,
+        longitude: course.center.lng,
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "ホーム", item: site.url },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "コースを探す",
+          item: `${site.url}/courses`,
+        },
+        { "@type": "ListItem", position: 3, name: course.name },
+      ],
+    },
+  ];
+
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* 1. ヒーロー */}
       <section className="relative h-screen w-full">
         <SmartImage

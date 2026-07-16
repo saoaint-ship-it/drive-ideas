@@ -32,8 +32,32 @@ export default function Home() {
     count: articles.filter((a) => a.category === key).length,
   }));
 
+  // SEO: サイト全体の構造化データ（ブランド情報を検索エンジンに伝える）
+  const siteJsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: site.name,
+      url: site.url,
+      description: site.description,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: site.name,
+      url: site.url,
+      logo: `${site.url}/images/logo.jpg`,
+      sameAs: [site.sns.x, site.sns.youtube],
+    },
+  ];
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
+      />
+
       {/* 1. ヒーロー: 全画面。実写ループ動画 + 静止画フォールバック */}
       <section className="relative h-screen w-full">
         <video

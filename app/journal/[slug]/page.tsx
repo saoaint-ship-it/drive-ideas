@@ -29,7 +29,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
   if (!article) return {};
-  return { title: article.title, description: article.excerpt };
+  return {
+    title: article.title,
+    description: article.excerpt,
+    alternates: { canonical: `/journal/${article.slug}` },
+    openGraph: {
+      type: "article",
+      title: article.title,
+      description: article.excerpt,
+      url: `/journal/${article.slug}`,
+      images: [article.heroImage],
+      publishedTime: article.publishedAt,
+      modifiedTime: article.updatedAt,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.excerpt,
+      images: [article.heroImage],
+    },
+  };
 }
 
 export default async function ArticlePage({ params }: Props) {
@@ -56,6 +75,20 @@ export default async function ArticlePage({ params }: Props) {
       dateModified: article.updatedAt,
       author: { "@type": "Organization", name: site.name },
       publisher: { "@type": "Organization", name: site.name },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "ホーム", item: site.url },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "読み物",
+          item: `${site.url}/journal`,
+        },
+        { "@type": "ListItem", position: 3, name: article.title },
+      ],
     },
   ];
   if (article.rankingTable) {
