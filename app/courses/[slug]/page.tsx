@@ -10,6 +10,9 @@ import Reveal from "@/components/Reveal";
 import { getAllCourses, getCourseBySlug, getRelatedCourses } from "@/lib/courses";
 import { publicFileExists } from "@/lib/files";
 import { site } from "@/config/site";
+import AffiliateBox from "@/components/AffiliateBox";
+import AffiliateDisclosure from "@/components/AffiliateDisclosure";
+import { isAffiliateActive } from "@/config/affiliates";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -283,6 +286,23 @@ export default async function CourseDetailPage({ params }: Props) {
           ))}
         </ul>
       </section>
+
+      {/* 10.5 旅の準備（宿・レンタカー）。広告リンク未設定なら表示されない */}
+      {(isAffiliateActive("hotel") || isAffiliateActive("rentalcar")) && (
+        <section className="mx-auto max-w-3xl px-5 pt-24 md:px-8 md:pt-40">
+          <SectionHeading label="Plan Your Trip" title="このドライブを旅にする" />
+          <div className="mt-4">
+            <AffiliateDisclosure />
+          </div>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <AffiliateBox
+              id="hotel"
+              title={`${course.prefectures[0]}周辺の宿を探す`}
+            />
+            <AffiliateBox id="rentalcar" />
+          </div>
+        </section>
+      )}
 
       {/* 11. 関連コース */}
       <section className="mx-auto max-w-7xl px-5 pt-24 md:px-8 md:pt-40">
