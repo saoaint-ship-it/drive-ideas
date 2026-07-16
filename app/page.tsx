@@ -7,8 +7,10 @@ import WeekendPlanner from "@/components/WeekendPlanner";
 import JapanSilhouette from "@/components/JapanSilhouette";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
 import { getFeaturedCourses, getCoursesByMonth } from "@/lib/courses";
 import { getAllArticles } from "@/lib/articles";
+import { videos } from "@/data/videos";
 import { CATEGORY_LABELS, type ArticleCategory } from "@/types/article";
 import { site } from "@/config/site";
 
@@ -131,7 +133,28 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* 5. SEASON: 今月の見頃 */}
+      {/* 5. VIDEOS: 動画で巡る絶景ドライブ */}
+      <section className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-40">
+        <div className="grid items-center gap-10 md:grid-cols-2">
+          <Reveal>
+            <SectionHeading label="Videos" title="動画で巡る絶景ドライブ" />
+            <p className="prose-jp mt-4 max-w-md text-sm text-muted">
+              YouTube「Holiday Ideas」の絶景まとめ動画。気になった道は、そのままコースの詳細ページで通行規制や立ち寄りスポットまで確認できます。
+            </p>
+            <Link
+              href="/videos"
+              className="mt-8 inline-block border border-line px-6 py-3 text-sm transition-colors hover:border-black/40"
+            >
+              動画一覧を見る →
+            </Link>
+          </Reveal>
+          <Reveal>
+            <YouTubeEmbed youtubeId={videos[0].id} title={videos[0].title} />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 6. SEASON: 今月の見頃 */}
       {seasonal.length > 0 && (
         <section className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-40">
           <Reveal>
