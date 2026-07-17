@@ -59,3 +59,61 @@ export function getAffiliate(id: AffiliateId): AffiliateProgram | null {
 // ステマ規制対応の広告表記文言
 export const AFFILIATE_DISCLOSURE =
   "※本ページはアフィリエイト広告（PR）を含みます。";
+
+// ── 商品検索の広告ショップ ──────────────────────────────
+// もしもアフィリエイトの「どこでもリンク」のトラッキングIDを使い、
+// キーワードから各ショップの検索結果へ飛ばす。clickBase の末尾に &url= で飛び先を付ける。
+
+type ProductShop = {
+  name: string; // 表示名
+  clickBase: string; // クリック計測URL(ID付き)
+  impressionUrl: string; // 表示計測1px
+  searchUrl: (keyword: string) => string; // キーワード→検索URL
+};
+
+const productShops: ProductShop[] = [
+  {
+    name: "楽天市場",
+    clickBase:
+      "https://af.moshimo.com/af/c/click?a_id=5700441&p_id=54&pc_id=54&pl_id=616",
+    impressionUrl:
+      "https://i.moshimo.com/af/i/impression?a_id=5700441&p_id=54&pc_id=54&pl_id=616",
+    searchUrl: (k) =>
+      `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(k)}/`,
+  },
+  {
+    name: "Yahoo!ショッピング",
+    clickBase:
+      "https://af.moshimo.com/af/c/click?a_id=5700495&p_id=1225&pc_id=1925&pl_id=18502",
+    impressionUrl:
+      "https://i.moshimo.com/af/i/impression?a_id=5700495&p_id=1225&pc_id=1925&pl_id=18502",
+    searchUrl: (k) => `https://shopping.yahoo.co.jp/search?p=${encodeURIComponent(k)}`,
+  },
+];
+
+export type ProductLink = {
+  name: string;
+  href: string;
+  impressionUrl: string;
+};
+
+// キーワードから各ショップの広告リンクを生成
+export function buildProductLinks(keyword: string): ProductLink[] {
+  return productShops.map((s) => ({
+    name: s.name,
+    href: `${s.clickBase}&url=${encodeURIComponent(s.searchUrl(keyword))}`,
+    impressionUrl: s.impressionUrl,
+  }));
+}
+
+// 商品リンクを表示する記事: slug → 検索キーワード
+export const productArticleKeywords: Record<string, string> = {
+  "dashcam-ranking-2026": "ドライブレコーダー",
+  "comfort-seat-ranking-2026": "車 シートクッション",
+  "winter-tire-chain-guide": "タイヤチェーン",
+  "in-car-organizing": "車 収納 グッズ",
+  "drive-music-guide": "車 スピーカー",
+  "pet-drive-guide": "犬 ドライブ グッズ",
+  "car-wash-basics": "洗車 グッズ",
+  "navi-app-ranking-2026": "車載 スマホホルダー",
+};

@@ -18,6 +18,9 @@ import {
 import { getCoursesBySlugs } from "@/lib/courses";
 import { CATEGORY_LABELS } from "@/types/article";
 import { site } from "@/config/site";
+import AffiliateShopLinks from "@/components/AffiliateShopLinks";
+import AffiliateDisclosure from "@/components/AffiliateDisclosure";
+import { productArticleKeywords } from "@/config/affiliates";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -170,6 +173,18 @@ export default async function ArticlePage({ params }: Props) {
             <div className="mt-6">
               <Markdown body={article.body} />
             </div>
+
+            {/* 商品を紹介する記事だけ、各ショップで探す広告枠を出す */}
+            {productArticleKeywords[article.slug] && (
+              <div className="mt-16">
+                <div className="mb-4">
+                  <AffiliateDisclosure />
+                </div>
+                <AffiliateShopLinks
+                  keyword={productArticleKeywords[article.slug]}
+                />
+              </div>
+            )}
 
             {/* 記事 → コース → 走りに行く、という導線 */}
             {relatedCourses.length > 0 && (
