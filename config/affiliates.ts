@@ -26,8 +26,11 @@ export const affiliatePrograms: Record<AffiliateId, AffiliateProgram> = {
   rentalcar: {
     id: "rentalcar",
     label: "レンタカーを探す",
-    note: "遠方のコースは、現地でレンタカーを借りるのが便利です。",
-    url: "", // ← レンタカー予約リンク
+    note: "遠方のコースは現地調達が便利。たびらいレンタカーで料金を比較できます。",
+    // もしもアフィリエイト経由のたびらいレンタカー(自由テキスト素材)
+    url: "https://af.moshimo.com/af/c/click?a_id=5700480&p_id=5701&pc_id=15749&pl_id=73376",
+    impressionUrl:
+      "https://i.moshimo.com/af/i/impression?a_id=5700480&p_id=5701&pc_id=15749&pl_id=73376",
   },
   carValuation: {
     id: "carValuation",
