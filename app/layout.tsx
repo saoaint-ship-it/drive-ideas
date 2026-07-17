@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import AdSense from "@/components/AdSense";
 import { site } from "@/config/site";
 
 const interTight = Inter_Tight({
@@ -61,6 +62,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col">
         <GoogleAnalytics />
+        <AdSense />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
