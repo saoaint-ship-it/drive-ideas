@@ -10,14 +10,18 @@ export type AffiliateProgram = {
   label: string; // ボタンの文言
   note: string; // ボタン上の補足説明
   url: string; // ASPで発行したリンク。空文字の間は非表示
+  impressionUrl?: string; // ASPの表示計測用ビーコン(1px画像)。あれば広告ボックス内に埋め込む
 };
 
 export const affiliatePrograms: Record<AffiliateId, AffiliateProgram> = {
   hotel: {
     id: "hotel",
     label: "周辺の宿を探す",
-    note: "このドライブの拠点に。楽天トラベル・じゃらんで宿泊先を検索できます。",
-    url: "", // ← ここにASPで発行した宿予約リンクを入れると表示されます
+    note: "このドライブの拠点に。楽天トラベルで宿泊先を検索できます。",
+    // もしもアフィリエイト経由の楽天トラベル(どこでもリンク)
+    url: "https://af.moshimo.com/af/c/click?a_id=5700443&p_id=55&pc_id=55&pl_id=624&url=https%3A%2F%2Ftravel.rakuten.co.jp%2F",
+    impressionUrl:
+      "https://i.moshimo.com/af/i/impression?a_id=5700443&p_id=55&pc_id=55&pl_id=624",
   },
   rentalcar: {
     id: "rentalcar",

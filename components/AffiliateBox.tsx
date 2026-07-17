@@ -21,6 +21,18 @@ export default function AffiliateBox({ id, title, note }: Props) {
       <div className="mt-4">
         <AffiliateButton href={program.url}>{program.label}</AffiliateButton>
       </div>
+      {program.impressionUrl && (
+        // ASPの表示回数計測用ビーコン(1px・見た目に影響なし)
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={program.impressionUrl}
+          width={1}
+          height={1}
+          style={{ border: "none" }}
+          alt=""
+          loading="lazy"
+        />
+      )}
     </div>
   );
 }
