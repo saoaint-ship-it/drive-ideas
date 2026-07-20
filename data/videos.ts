@@ -34,7 +34,7 @@ export const videos: Video[] = [
       { timeSec: 382, label: "しまなみ海道（広島県・愛媛県）", courseSlug: "shimanami-kaido" },
       { timeSec: 443, label: "秋吉台カルストロード（山口県）", courseSlug: "akiyoshidai-karst-road" },
       { timeSec: 505, label: "やまなみハイウェイ（大分県・熊本県）", courseSlug: "yamanami-highway" },
-      { timeSec: 567, label: "伊良部大橋（沖縄県・宮古島）" },
+      { timeSec: 567, label: "伊良部大橋（沖縄県・宮古島）", courseSlug: "irabu-bridge" },
     ],
   },
   {
@@ -46,10 +46,10 @@ export const videos: Video[] = [
     chapters: [
       { timeSec: 13, label: "メタセコイア並木（滋賀県）", courseSlug: "metasequoia-namiki" },
       { timeSec: 87, label: "美瑛・パッチワークの路（北海道）", courseSlug: "biei-patchwork" },
-      { timeSec: 147, label: "伊吹山ドライブウェイ（滋賀県・岐阜県）" },
+      { timeSec: 147, label: "伊吹山ドライブウェイ（滋賀県・岐阜県）", courseSlug: "ibukiyama-driveway" },
       { timeSec: 207, label: "志賀草津高原ルート（長野県・群馬県）", courseSlug: "kusatsu-shiga" },
-      { timeSec: 268, label: "阿蘇ミルクロード（熊本県）" },
-      { timeSec: 328, label: "日南フェニックスロード（宮崎県）" },
+      { timeSec: 268, label: "阿蘇ミルクロード（熊本県）", courseSlug: "aso-milk-road" },
+      { timeSec: 328, label: "日南フェニックスロード（宮崎県）", courseSlug: "nichinan-phoenix-road" },
       { timeSec: 388, label: "角島大橋（山口県）", courseSlug: "tsunoshima-ohashi" },
       { timeSec: 453, label: "西伊豆スカイライン（静岡県）", courseSlug: "nishi-izu-skyline" },
       { timeSec: 514, label: "千里浜なぎさドライブウェイ（石川県）", courseSlug: "chirihama-nagisa" },
@@ -63,4 +63,19 @@ export function formatVideoTime(sec: number): string {
   const m = Math.floor(sec / 60);
   const s = sec % 60;
   return `${m}:${String(s).padStart(2, "0")}`;
+}
+
+export type VideoAppearance = { video: Video; chapter: VideoChapter };
+
+// コースのslugが登場する動画チャプターを全動画から探す（コース詳細ページの動画導線用）
+export function getVideoAppearancesForCourse(slug: string): VideoAppearance[] {
+  const appearances: VideoAppearance[] = [];
+  for (const video of videos) {
+    for (const chapter of video.chapters) {
+      if (chapter.courseSlug === slug) {
+        appearances.push({ video, chapter });
+      }
+    }
+  }
+  return appearances;
 }

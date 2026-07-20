@@ -9,6 +9,8 @@ export type CourseMapProps = {
   zoom?: number;
   onMarkerClick?: (name: string) => void;
   fitToPath?: boolean;
+  slug?: string; // コースのslug（試作機能の出し分けに使用）
+  spotImages?: (string | null)[]; // markersと同じ順のスポット写真パス（ホバー表示用）
 };
 
 // ルートライン・マーカーの見た目は両プロバイダで揃える

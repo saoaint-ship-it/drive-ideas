@@ -1,11 +1,22 @@
 import { courses as coursesBase } from "@/data/courses";
 import { coursesExtra } from "@/data/courses-extra";
+import { coursesExtra2 } from "@/data/courses-extra2";
+import { coursesExtra3 } from "@/data/courses-extra3";
+import { coursesExtra4 } from "@/data/courses-extra4";
+import { coursesExtra5 } from "@/data/courses-extra5";
 import type { Course, Region } from "@/types/course";
 
 // データ取得層。ページからは必ずこの関数経由でアクセスする
 // （将来CMSに差し替えるときはこのファイルだけを書き換える）
 
-const courses: Course[] = [...coursesBase, ...coursesExtra];
+const courses: Course[] = [
+  ...coursesBase,
+  ...coursesExtra,
+  ...coursesExtra2,
+  ...coursesExtra3,
+  ...coursesExtra4,
+  ...coursesExtra5,
+];
 
 export function getAllCourses(): Course[] {
   return courses;

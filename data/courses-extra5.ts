@@ -1,0 +1,147 @@
+import { routePaths } from "@/data/paths";
+import type { Course } from "@/types/course";
+
+// 写真素材が未確保のため、ページ枠・ルート・空撮映像のみ先行で用意する2コース。
+// ヒーロー画像は自作の空撮映像(NeonTerrainMap)から1コマを切り出したもの。
+// ギャラリー・スポット写真は素材が揃い次第、追加する。
+
+export const coursesExtra5: Course[] = [
+  {
+    slug: "akan-crossing-road",
+    name: "阿寒横断道路",
+    prefectures: ["北海道"],
+    region: "北海道",
+    catchcopy: "阿寒の湖沼群を抜ける、峠のドライブ。",
+    summary:
+      "国道241号、阿寒湖畔から弟子屈町へ抜ける峠道。阿寒摩周国立公園内を走り、雌阿寒岳・雄阿寒岳を望む双岳台展望台、ペンケトー・パンケトーを見下ろす双湖台など、道中に湖沼群の展望スポットが点在する。",
+    distanceKm: 11.5,
+    durationMin: 20,
+    elevationGainM: 356,
+    maxElevationM: 747,
+    windingLevel: 3,
+    difficulty: "中級",
+    roadTypes: ["峠"],
+    toll: "無料",
+    bestSeasons: ["春", "夏", "秋"],
+    bestMonths: [5, 6, 7, 8, 9, 10],
+    narrowRoadWarning: false,
+    suitableFor: ["スポーツ", "EV"],
+    closure: {
+      type: "冬季閉鎖",
+      period: "積雪時は路面凍結に注意(通行止めではないが冬用タイヤ必須)",
+    },
+    center: { lat: 43.44, lng: 144.183 },
+    path: routePaths["akan-crossing-road"],
+    spots: [
+      {
+        name: "阿寒湖畔側入口",
+        type: "展望",
+        lat: 43.42297,
+        lng: 144.14476,
+        note: "国道241号の起点付近。ここから峠を上っていく",
+      },
+      {
+        name: "双岳台展望台",
+        type: "展望",
+        lat: 43.44465,
+        lng: 144.1858,
+        note: "雌阿寒岳・雄阿寒岳を望む峠道の展望地",
+      },
+      {
+        name: "弟子屈側",
+        type: "撮影",
+        lat: 43.45664,
+        lng: 144.22148,
+        note: "峠を下った先、弟子屈町方面のエリア",
+      },
+    ],
+    elevationProfile: [391, 430, 494, 500, 570, 646, 702, 727, 747],
+    heroImage: "/images/courses/akan-crossing-road/hero.jpg",
+    gallery: [],
+    body: [
+      {
+        heading: "阿寒摩周国立公園を貫く峠道",
+        text: "阿寒湖畔から弟子屈町へと抜ける国道241号は、日本有数のカルデラ湖群を擁する阿寒摩周国立公園の中を走る。道中には雌阿寒岳・雄阿寒岳を望む双岳台、双子の湖ペンケトー・パンケトーを見下ろす双湖台など、峠道ならではの展望スポットが連続する。",
+      },
+      {
+        heading: "阿寒湖・摩周湖とあわせて周遊",
+        text: "起点の阿寒湖はマリモで知られる湖で、終点側は摩周湖・屈斜路湖にも近い。道東の代表的なカルデラ湖群を巡るドライブルートの一部として組み込みやすく、道東周遊の定番コースになっている。",
+      },
+    ],
+    cautions: [
+      "峠道のためカーブが連続する。対向車・野生動物(エゾシカ等)に注意",
+      "冬季は積雪・路面凍結あり。スタッドレスタイヤ必須",
+      "濃霧が発生しやすい。視界不良時は速度を落とす",
+    ],
+    updatedAt: "2026-07-19",
+  },
+  {
+    slug: "hakkoda-towada-gold-line",
+    name: "八甲田・十和田ゴールドライン",
+    prefectures: ["青森県"],
+    region: "東北",
+    catchcopy: "八甲田の山岳地帯から、十和田湖へ。",
+    summary:
+      "国道103号、八甲田山系の山岳地帯を抜けて十和田湖へと向かう区間の愛称。酸ヶ湯温泉や城ヶ倉大橋など、東北の山岳景観を象徴する見どころが点在する。紅葉シーズンは特に人気の高いドライブルート。",
+    distanceKm: 6.2,
+    durationMin: 15,
+    elevationGainM: 173,
+    maxElevationM: 1029,
+    windingLevel: 3,
+    difficulty: "中級",
+    roadTypes: ["峠"],
+    toll: "無料",
+    bestSeasons: ["春", "夏", "秋"],
+    bestMonths: [5, 6, 7, 8, 9, 10],
+    narrowRoadWarning: false,
+    suitableFor: ["スポーツ", "EV"],
+    closure: {
+      type: "冬季閉鎖",
+      period: "積雪期は路面凍結・チェーン規制の可能性あり",
+    },
+    center: { lat: 40.637, lng: 140.883 },
+    path: routePaths["hakkoda-towada-gold-line"],
+    spots: [
+      {
+        name: "酸ヶ湯温泉側",
+        type: "展望",
+        lat: 40.64676,
+        lng: 140.85761,
+        note: "八甲田を代表する温泉地。ルートの起点付近",
+      },
+      {
+        name: "城ヶ倉大橋方面",
+        type: "展望",
+        lat: 40.63293,
+        lng: 140.88656,
+        note: "八甲田山系を望む山岳区間",
+      },
+      {
+        name: "十和田湖側",
+        type: "撮影",
+        lat: 40.62693,
+        lng: 140.90914,
+        note: "十和田湖方面へつながるエリア",
+      },
+    ],
+    elevationProfile: [948, 976, 1022, 1029, 1005, 977, 931, 892, 856],
+    heroImage: "/images/courses/hakkoda-towada-gold-line/hero.jpg",
+    gallery: [],
+    body: [
+      {
+        heading: "八甲田の山岳地帯を抜けるゴールドライン",
+        text: "国道103号のうち、八甲田山系の山岳地帯を抜けて十和田湖へ向かう区間の愛称。標高1,000m前後の山岳地帯を走り、酸ヶ湯温泉や城ヶ倉大橋といった八甲田を代表する見どころが道沿いに点在する。",
+      },
+      {
+        heading: "十和田湖・奥入瀬渓流とあわせて",
+        text: "終点側は十和田湖・奥入瀬渓流に近く、青森県を代表する自然景観を巡る周遊ルートの一部として使われることが多い。紅葉シーズンは八甲田・十和田エリア全体が色づき、東北屈指の紅葉ドライブとして知られる。",
+      },
+    ],
+    cautions: [
+      "山岳道路のためカーブが連続する。対向車に注意",
+      "冬季は積雪・路面凍結あり。チェーン規制がかかることがある",
+      "濃霧が発生しやすい区間がある。視界不良時は速度を落とす",
+    ],
+    updatedAt: "2026-07-19",
+  },
+];

@@ -56,7 +56,7 @@ export const coursesExtra: Course[] = [
     ],
     elevationProfile: [80, 300, 550, 738, 500, 250, 30],
     heroImage: "/images/courses/shiretoko-odan/hero.jpg",
-    gallery: ["/images/courses/shiretoko-odan/gallery-1.jpg"],
+    gallery: ["/images/courses/shiretoko-odan/gallery-1.jpg", "/images/courses/shiretoko-odan/gallery-2.jpg"],
     body: [
       {
         heading: "峠の上は、もう別の気候",
@@ -120,7 +120,7 @@ export const coursesExtra: Course[] = [
     ],
     elevationProfile: [180, 210, 240, 250, 230, 200],
     heroImage: "/images/courses/biei-patchwork/hero.jpg",
-    gallery: ["/images/courses/biei-patchwork/gallery-1.jpg"],
+    gallery: ["/images/courses/biei-patchwork/gallery-1.jpg", "/images/courses/biei-patchwork/gallery-2.jpg"],
     body: [
       {
         heading: "「何もない」が最高の贅沢",
@@ -522,7 +522,7 @@ export const coursesExtra: Course[] = [
     ],
     elevationProfile: [200, 250, 300, 400, 420, 400],
     heroImage: "/images/courses/towada-oirase/hero.jpg",
-    gallery: ["/images/courses/towada-oirase/gallery-1.jpg"],
+    gallery: ["/images/courses/towada-oirase/gallery-1.jpg", "/images/courses/towada-oirase/gallery-2.jpg"],
     body: [
       {
         heading: "車を停めて、歩いてこそ",
@@ -660,7 +660,7 @@ export const coursesExtra: Course[] = [
     ],
     elevationProfile: [1200, 1500, 1800, 2000, 2172, 2000, 1700],
     heroImage: "/images/courses/kusatsu-shiga/hero.jpg",
-    gallery: ["/images/courses/kusatsu-shiga/gallery-1.jpg"],
+    gallery: ["/images/courses/kusatsu-shiga/gallery-1.jpg", "/images/courses/kusatsu-shiga/gallery-2.jpg"],
     body: [
       {
         heading: "空に一番近い国道",
@@ -1063,7 +1063,7 @@ export const coursesExtra: Course[] = [
     ],
     elevationProfile: [2, 3, 2, 3, 2],
     heroImage: "/images/courses/chirihama-nagisa/hero.jpg",
-    gallery: ["/images/courses/chirihama-nagisa/gallery-1.jpg"],
+    gallery: ["/images/courses/chirihama-nagisa/gallery-1.jpg", "/images/courses/chirihama-nagisa/gallery-2.jpg"],
     body: [
       {
         heading: "なぜここだけ走れるのか",
@@ -1128,7 +1128,7 @@ export const coursesExtra: Course[] = [
     ],
     elevationProfile: [730, 850, 940, 880, 760],
     heroImage: "/images/courses/nishi-izu-skyline/hero.jpg",
-    gallery: ["/images/courses/nishi-izu-skyline/gallery-1.jpg"],
+    gallery: ["/images/courses/nishi-izu-skyline/gallery-1.jpg", "/images/courses/nishi-izu-skyline/gallery-2.jpg"],
     body: [
       {
         heading: "西伊豆の「奥座敷」へ",
@@ -1587,7 +1587,7 @@ export const coursesExtra: Course[] = [
     ],
     elevationProfile: [20, 250, 450, 555, 400, 50],
     heroImage: "/images/courses/ise-shima-skyline/hero.jpg",
-    gallery: ["/images/courses/ise-shima-skyline/gallery-1.jpg"],
+    gallery: ["/images/courses/ise-shima-skyline/gallery-1.jpg", "/images/courses/ise-shima-skyline/gallery-2.jpg"],
     body: [
       {
         heading: "お伊勢参りの「あとの一足」",
@@ -1852,7 +1852,7 @@ export const coursesExtra: Course[] = [
     ],
     elevationProfile: [180, 250, 320, 360, 300],
     heroImage: "/images/courses/akiyoshidai-karst-road/hero.jpg",
-    gallery: ["/images/courses/akiyoshidai-karst-road/gallery-1.jpg"],
+    gallery: ["/images/courses/akiyoshidai-karst-road/gallery-1.jpg", "/images/courses/akiyoshidai-karst-road/gallery-2.jpg"],
     body: [
       {
         heading: "3億年かけてできた道路風景",
@@ -2251,7 +2251,7 @@ export const coursesExtra: Course[] = [
     ],
     elevationProfile: [450, 700, 1000, 1330, 1100, 800, 600],
     heroImage: "/images/courses/yamanami-highway/hero.jpg",
-    gallery: ["/images/courses/yamanami-highway/gallery-1.jpg"],
+    gallery: ["/images/courses/yamanami-highway/gallery-1.jpg", "/images/courses/yamanami-highway/gallery-2.jpg"],
     body: [
       {
         heading: "草原の国のメインストリート",

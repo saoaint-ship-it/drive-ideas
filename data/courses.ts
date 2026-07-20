@@ -290,7 +290,7 @@ export const courses: Course[] = [
     ],
     elevationProfile: [88, 90, 92, 93, 95],
     heroImage: "/images/courses/metasequoia-namiki/hero.jpg",
-    gallery: ["/images/courses/metasequoia-namiki/gallery-1.jpg"],
+    gallery: ["/images/courses/metasequoia-namiki/gallery-1.jpg", "/images/courses/metasequoia-namiki/gallery-2.jpg"],
     body: [
       {
         heading: "四季で4回来たくなる道",

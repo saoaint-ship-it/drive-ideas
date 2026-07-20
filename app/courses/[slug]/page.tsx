@@ -13,6 +13,7 @@ import { site } from "@/config/site";
 import AffiliateBox from "@/components/AffiliateBox";
 import AffiliateDisclosure from "@/components/AffiliateDisclosure";
 import { isAffiliateActive } from "@/config/affiliates";
+import { getVideoAppearancesForCourse, formatVideoTime } from "@/data/videos";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -51,6 +52,7 @@ export default async function CourseDetailPage({ params }: Props) {
   if (!course) notFound();
 
   const related = getRelatedCourses(course, 3);
+  const videoAppearances = getVideoAppearancesForCourse(course.slug);
 
   // 写真が実際に置かれている枠だけを表示する（未設置の枠はセクションごと隠す）
   const galleryImages = course.gallery.filter(publicFileExists);
@@ -145,6 +147,44 @@ export default async function CourseDetailPage({ params }: Props) {
         </div>
       </section>
 
+      {/* 2.5 動画導線: この道が登場するYouTube動画（あれば表示） */}
+      {videoAppearances.length > 0 && (
+        <section className="mx-auto max-w-7xl px-5 md:px-8">
+          <div className="border border-line px-6 py-6 md:px-8">
+            <p className="label-en">Featured In Video</p>
+            <div className="mt-4 space-y-4">
+              {videoAppearances.map(({ video, chapter }) => (
+                <a
+                  key={`${video.id}-${chapter.timeSec}`}
+                  href={`https://youtu.be/${video.id}?t=${chapter.timeSec}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-4"
+                >
+                  <div className="relative h-14 w-24 shrink-0 overflow-hidden bg-surface">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
+                      alt={video.title}
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="truncate text-sm font-medium transition-colors group-hover:text-signal">
+                      {video.title}
+                    </p>
+                    <p className="mt-0.5 text-xs text-muted">
+                      {formatVideoTime(chapter.timeSec)}〜 この場面から再生 →
+                    </p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* 3. 通行規制アラート */}
       {course.closure && (
         <section className="mx-auto max-w-7xl px-5 md:px-8">
@@ -206,7 +246,9 @@ export default async function CourseDetailPage({ params }: Props) {
             center={course.center}
             path={course.path}
             markers={course.spots}
+            spotImages={spotPhotos}
             fitToPath
+            slug={course.slug}
           />
         </div>
       </section>
