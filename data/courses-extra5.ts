@@ -7,6 +7,71 @@ import type { Course } from "@/types/course";
 
 export const coursesExtra5: Course[] = [
   {
+    slug: "shirasaki-coast",
+    name: "県道24号 白崎海岸",
+    prefectures: ["和歌山県"],
+    region: "近畿",
+    catchcopy: "石灰岩の白い岬と、紺碧の海。",
+    summary:
+      "和歌山県道24号御坊由良線、由良町の白崎海岸沿いの区間。石灰岩でできた真っ白な岬が海に突き出す独特の景観で、まるで地中海のような青と白のコントラストが楽しめる。",
+    distanceKm: 4.6,
+    durationMin: 10,
+    elevationGainM: 52,
+    maxElevationM: 62,
+    windingLevel: 2,
+    difficulty: "初心者向け",
+    roadTypes: ["海岸線"],
+    toll: "無料",
+    bestSeasons: ["春", "夏", "秋"],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10, 11],
+    narrowRoadWarning: false,
+    suitableFor: ["軽", "ミニバン", "スポーツ", "EV", "オープン"],
+    center: { lat: 33.969, lng: 135.078 },
+    path: routePaths["shirasaki-coast"],
+    spots: [
+      {
+        name: "南側入口",
+        type: "展望",
+        lat: 33.95961,
+        lng: 135.08168,
+        note: "御坊由良線、白崎海岸区間の入口",
+      },
+      {
+        name: "白崎海岸展望",
+        type: "展望",
+        lat: 33.97755,
+        lng: 135.07299,
+        note: "石灰岩の白い岬と紺碧の海を望む区間",
+      },
+      {
+        name: "北側エリア",
+        type: "撮影",
+        lat: 33.97818,
+        lng: 135.08496,
+        note: "海岸線の北側区間",
+      },
+    ],
+    elevationProfile: [36, 10, 11, 22, 21, 33, 35, 39, 62],
+    heroImage: "/images/courses/shirasaki-coast/hero.jpg",
+    gallery: [],
+    body: [
+      {
+        heading: "石灰岩が生んだ、地中海のような白い岬",
+        text: "白崎海岸は古代の石灰岩でできた岬で、波の浸食で削られた真っ白な岩肌が特徴。青い海との対比が「日本の渚百選」にも選ばれるほど美しく、その景観から「日本のエーゲ海」とも呼ばれることがある。",
+      },
+      {
+        heading: "由良町のダイビング・キャンプスポットとしても",
+        text: "透明度の高い海はダイビングスポットとしても知られ、岬の先端付近にはキャンプ場もある。海岸線を走るドライブだけでなく、海で過ごす時間まで含めて楽しめるエリア。",
+      },
+    ],
+    cautions: [
+      "強風・荒天時は海沿いの走行に注意",
+      "観光シーズンは駐車場が混雑することがある",
+      "岩場に近づく際は足元に注意(滑りやすい石灰岩)",
+    ],
+    updatedAt: "2026-07-20",
+  },
+  {
     slug: "kaizu-osaki",
     name: "海津大崎",
     prefectures: ["滋賀県"],
