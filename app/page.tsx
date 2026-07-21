@@ -14,10 +14,22 @@ import { videos } from "@/data/videos";
 import { CATEGORY_LABELS, type ArticleCategory } from "@/types/article";
 import { site } from "@/config/site";
 
+const REGIONS: { name: string; count: number }[] = [
+  { name: "北海道", count: 18 },
+  { name: "東北", count: 16 },
+  { name: "関東", count: 11 },
+  { name: "中部", count: 18 },
+  { name: "近畿", count: 12 },
+  { name: "中国", count: 5 },
+  { name: "四国", count: 4 },
+  { name: "九州・沖縄", count: 14 },
+];
+
 export default function Home() {
-  const featured = getFeaturedCourses(3);
+  const featured = getFeaturedCourses(6);
   const month = new Date().getMonth() + 1;
   const seasonal = getCoursesByMonth(month).slice(0, 4);
+  const homeVideos = videos.slice(0, 4);
   const articles = getAllArticles();
   const rankingArticle =
     articles.find((a) => a.category === "ranking") ?? articles[0];
@@ -133,6 +145,33 @@ export default function Home() {
         </Link>
       </section>
 
+      {/* 3.5 地方から探す */}
+      <section className="border-t border-line">
+        <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+          <Reveal>
+            <SectionHeading label="Regions" title="地方から探す" />
+            <p className="prose-jp mt-4 max-w-xl text-sm text-muted">
+              全国{REGIONS.reduce((s, r) => s + r.count, 0)}コースを8つの地方から。走りたいエリアを選んで、そこから道を探せます。
+            </p>
+          </Reveal>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {REGIONS.map((r) => (
+              <Reveal key={r.name}>
+                <Link
+                  href={`/courses?region=${encodeURIComponent(r.name)}`}
+                  className="group flex items-center justify-between border border-line px-6 py-6 transition-colors hover:border-black/40"
+                >
+                  <span className="text-lg font-medium">{r.name}</span>
+                  <span className="font-mono text-xs text-muted transition-colors group-hover:text-text">
+                    {r.count} COURSES →
+                  </span>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 4. 全国マップへの導線 */}
       <section className="border-y border-line">
         <Link
@@ -174,7 +213,7 @@ export default function Home() {
           </p>
         </Reveal>
         <div className="mt-10 grid gap-8 md:grid-cols-2">
-          {videos.map((video) => (
+          {homeVideos.map((video) => (
             <Reveal key={video.id}>
               <YouTubeEmbed youtubeId={video.id} title={video.title} />
               <p className="mt-4 text-sm font-medium">{video.title}</p>
