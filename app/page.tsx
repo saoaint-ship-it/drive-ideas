@@ -253,21 +253,24 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* 4. 全国マップへの導線 */}
-      <section className="border-y border-line">
+      {/* 4. 全国マップへの導線: 空撮動画と同じ「夜の日本」に沈む全幅ダークセクション */}
+      <section className="bg-[#0a1626] bg-[radial-gradient(ellipse_80%_90%_at_70%_45%,#13294a_0%,#0a1626_55%,#070f1c_100%)]">
         <Link
           href="/map"
           className="group mx-auto grid max-w-7xl items-center gap-10 px-5 py-24 md:grid-cols-2 md:px-8 md:py-32"
         >
           <Reveal>
-            <SectionHeading
-              label="Map"
-              title="全国のドライブコースを地図から探す"
-            />
-            <p className="prose-jp mt-4 max-w-md text-sm text-muted">
-              北海道から九州まで。行き先が決まっていない日は、地図を眺めるところから。
+            <p className="label-en !text-sky-200/50">Map</p>
+            <h2 className="mt-3 text-2xl font-medium leading-snug text-white md:text-3xl">
+              全国のドライブコースを
+              <br className="hidden md:block" />
+              地図から探す
+            </h2>
+            <p className="prose-jp mt-4 max-w-md text-sm text-sky-100/55">
+              北海道から九州まで、{`98`}
+              本の絶景ロードが夜の日本列島に灯る。行き先が決まっていない日は、地図を眺めるところから。
             </p>
-            <span className="mt-8 inline-block border border-line px-6 py-3 text-sm transition-colors group-hover:border-black/40">
+            <span className="mt-8 inline-block border border-white/25 px-6 py-3 text-sm text-white transition-colors group-hover:border-white/70">
               マップを開く →
             </span>
           </Reveal>

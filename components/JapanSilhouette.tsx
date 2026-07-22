@@ -9,8 +9,8 @@ import {
 } from "@/data/japan-outline";
 
 // トップページの全国マップ導線用・実際の海岸線データによる日本地図。
-// 空撮動画と同じ世界観(夜の日本を上空から見下ろし、コースの光が灯る)を
-// SVGのグラデーション+発光フィルタで表現する。
+// 置かれるセクション側がダークネイビーの「夜」なので、SVG自体は背景を持たず、
+// 発光する列島とコースの灯りだけを闇に浮かべる(枠が無いため背景から浮かない)。
 // 形状データは scripts/fetch-japan-outline.mjs で生成した data/japan-outline.ts を使う。
 
 const OKI_INSET = { x: 24, y: 24, scale: 1.7 };
@@ -31,11 +31,11 @@ export default function JapanSilhouette() {
       aria-label="全国のドライブコースの位置を示した日本地図"
     >
       <defs>
-        {/* 夜空のような背景(中心がわずかに明るい) */}
-        <radialGradient id="jsBg" cx="55%" cy="40%" r="80%">
-          <stop offset="0%" stopColor="#122844" />
-          <stop offset="55%" stopColor="#0a1626" />
-          <stop offset="100%" stopColor="#060d19" />
+        {/* 列島の背後にうっすら漂う大気の光 */}
+        <radialGradient id="jsHaze" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="rgba(59,130,246,0.14)" />
+          <stop offset="60%" stopColor="rgba(59,130,246,0.05)" />
+          <stop offset="100%" stopColor="rgba(59,130,246,0)" />
         </radialGradient>
         {/* 陸地の質感(上が明るく下が沈む) */}
         <linearGradient id="jsLand" x1="0" y1="0" x2="0" y2="1">
@@ -61,36 +61,14 @@ export default function JapanSilhouette() {
         </filter>
       </defs>
 
-      {/* 背景 */}
-      <rect
-        x="0"
-        y="0"
-        width={MAIN_VIEW.w}
-        height={MAIN_VIEW.h}
-        fill="url(#jsBg)"
+      {/* 大気の光(列島の背後) */}
+      <ellipse
+        cx={MAIN_VIEW.w * 0.55}
+        cy={MAIN_VIEW.h * 0.5}
+        rx={MAIN_VIEW.w * 0.5}
+        ry={MAIN_VIEW.h * 0.48}
+        fill="url(#jsHaze)"
       />
-
-      {/* HUD風のコーナーマーク */}
-      {(() => {
-        const L = 16;
-        const P = 10;
-        const W = MAIN_VIEW.w;
-        const H = MAIN_VIEW.h;
-        const d = [
-          `M ${P} ${P + L} V ${P} H ${P + L}`,
-          `M ${W - P - L} ${P} H ${W - P} V ${P + L}`,
-          `M ${W - P} ${H - P - L} V ${H - P} H ${W - P - L}`,
-          `M ${P + L} ${H - P} H ${P} V ${H - P - L}`,
-        ].join(" ");
-        return (
-          <path
-            d={d}
-            fill="none"
-            stroke="rgba(125,211,252,0.4)"
-            strokeWidth="1"
-          />
-        );
-      })()}
 
       {/* 本土: 発光する海岸線(ぼかし) → 陸地本体 の2層 */}
       <g filter="url(#jsCoastGlow)">
@@ -101,7 +79,7 @@ export default function JapanSilhouette() {
             fill="none"
             stroke={COAST}
             strokeWidth="1.4"
-            strokeOpacity="0.55"
+            strokeOpacity="0.5"
             strokeLinejoin="round"
           />
         ))}
@@ -111,7 +89,7 @@ export default function JapanSilhouette() {
           key={i}
           d={d}
           fill="url(#jsLand)"
-          stroke="rgba(103,232,249,0.5)"
+          stroke="rgba(103,232,249,0.45)"
           strokeWidth="0.5"
           strokeLinejoin="round"
         />
@@ -125,7 +103,7 @@ export default function JapanSilhouette() {
         })}
       </g>
 
-      {/* 沖縄インセット（左上の枠） */}
+      {/* 沖縄インセット（左上・細い枠だけ） */}
       <g
         transform={`translate(${OKI_INSET.x}, ${OKI_INSET.y}) scale(${OKI_INSET.scale})`}
       >
@@ -134,9 +112,9 @@ export default function JapanSilhouette() {
           y="-6"
           width={OKI_VIEW.w + 12}
           height={OKI_VIEW.h + 12}
-          fill="rgba(10,22,38,0.5)"
-          stroke="rgba(125,211,252,0.35)"
-          strokeWidth="0.6"
+          fill="none"
+          stroke="rgba(125,211,252,0.22)"
+          strokeWidth="0.5"
         />
         <g filter="url(#jsCoastGlow)">
           {okinawaPaths.map((d, i) => (
@@ -146,7 +124,7 @@ export default function JapanSilhouette() {
               fill="none"
               stroke={COAST}
               strokeWidth="1"
-              strokeOpacity="0.55"
+              strokeOpacity="0.5"
               strokeLinejoin="round"
             />
           ))}
@@ -156,7 +134,7 @@ export default function JapanSilhouette() {
             key={i}
             d={d}
             fill="url(#jsLand)"
-            stroke="rgba(103,232,249,0.5)"
+            stroke="rgba(103,232,249,0.45)"
             strokeWidth="0.4"
             strokeLinejoin="round"
           />
@@ -180,20 +158,20 @@ export default function JapanSilhouette() {
         x={OKI_INSET.x}
         y={OKI_INSET.y + (OKI_VIEW.h + 12) * OKI_INSET.scale + 14}
         fontSize="10"
-        fill="rgba(125,211,252,0.5)"
+        fill="rgba(125,211,252,0.4)"
         fontFamily="monospace"
         letterSpacing="0.2em"
       >
         OKINAWA
       </text>
 
-      {/* 右下のラベル(空撮動画のHUD感) */}
+      {/* 右下のラベル(さりげなく) */}
       <text
-        x={MAIN_VIEW.w - 14}
-        y={MAIN_VIEW.h - 14}
+        x={MAIN_VIEW.w - 4}
+        y={MAIN_VIEW.h - 8}
         fontSize="10"
         textAnchor="end"
-        fill="rgba(125,211,252,0.5)"
+        fill="rgba(125,211,252,0.4)"
         fontFamily="monospace"
         letterSpacing="0.25em"
       >
