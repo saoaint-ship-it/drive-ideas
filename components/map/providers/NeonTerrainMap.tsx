@@ -2,13 +2,15 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Map, { Source, Layer, Popup, type MapRef } from "react-map-gl/maplibre";
-import type {
-  StyleSpecification,
-  MapLayerMouseEvent,
-  Map as MaplibreMap,
-} from "maplibre-gl";
+import type { MapLayerMouseEvent, Map as MaplibreMap } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { type CourseMapProps, pathBounds } from "@/components/map/types";
+import {
+  buildNeonStyle,
+  ROUTE_GLOW_COLOR,
+  ROUTE_CORE_COLOR,
+  SPOT_COLOR,
+} from "@/components/map/neonStyle";
 
 // 通常のコース表示に加え、動画書き出し用に外から地図を制御する入口を持つ。
 // autoOrbit=false で自動回転を止め、onMapReady で地図インスタンスを渡す。
@@ -24,76 +26,12 @@ type NeonTerrainMapProps = CourseMapProps & {
 // 読み込み時に上空をゆっくり自動回転し、ユーザーが操作すると止まる。
 // NEXT_PUBLIC_MAPTILER_KEY が未設定の間は何も描画しない（キー無しで壊れないように）。
 
-const TERRAIN_SOURCE_ID = "maptiler-terrain";
-const SATELLITE_SOURCE_ID = "maptiler-satellite";
 const SPOTS_SOURCE_ID = "spots";
 const SPOTS_HIT_LAYER_ID = "spots-hit";
-const ROUTE_GLOW_COLOR = "#38bdf8"; // シアンブルー（縁取り）
-const ROUTE_CORE_COLOR = "#cfe8ff"; // 芯（やわらかい水色）
-const SPOT_COLOR = "#7dd3fc"; // スポット印（ルートと同系の青）
 const ORBIT_DEG_PER_SEC = 3.5; // 自動回転の速さ（度/秒）
 
-function buildStyle(key: string): StyleSpecification {
-  return {
-    version: 8,
-    sources: {
-      [TERRAIN_SOURCE_ID]: {
-        type: "raster-dem",
-        tiles: [
-          `https://api.maptiler.com/tiles/terrain-rgb-v2/{z}/{x}/{y}.webp?key=${key}`,
-        ],
-        tileSize: 256,
-        minzoom: 0,
-        maxzoom: 14,
-        encoding: "mapbox",
-      },
-      [SATELLITE_SOURCE_ID]: {
-        type: "raster",
-        tiles: [
-          `https://api.maptiler.com/tiles/satellite-v2/{z}/{x}/{y}.jpg?key=${key}`,
-        ],
-        tileSize: 256,
-        minzoom: 0,
-        maxzoom: 20,
-        attribution:
-          '&copy; <a href="https://www.maptiler.com/copyright/">MapTiler</a> &copy; OpenStreetMap contributors',
-      },
-    },
-    layers: [
-      {
-        id: "bg",
-        type: "background",
-        paint: { "background-color": "#0a1626" },
-      },
-      {
-        // 実際の色（衛星画像）を地表に。少し落ち着かせつつ暗すぎない調整
-        id: "satellite",
-        type: "raster",
-        source: SATELLITE_SOURCE_ID,
-        paint: {
-          "raster-saturation": -0.12,
-          "raster-contrast": 0.05,
-          "raster-brightness-min": 0.05,
-          "raster-brightness-max": 0.95,
-        },
-      },
-      {
-        // 起伏を少しだけ強調（衛星に立体感を足す。かけすぎないよう控えめ）
-        id: "hillshade",
-        type: "hillshade",
-        source: TERRAIN_SOURCE_ID,
-        paint: {
-          "hillshade-illumination-direction": 315,
-          "hillshade-exaggeration": 0.25,
-          "hillshade-shadow-color": "#0a1420",
-          "hillshade-highlight-color": "#dfeaf5",
-          "hillshade-accent-color": "#16324d",
-        },
-      },
-    ],
-    terrain: { source: TERRAIN_SOURCE_ID, exaggeration: 1.5 },
-  };
-}
+// 画風の定義は components/map/neonStyle.ts に共通化(俯瞰マップと同一)
+const buildStyle = (key: string) => buildNeonStyle(key, { terrain: true });
 
 // 点[lng,lat]を線分ABに射影した最近点を返す（経度は緯度により縮むので係数で補正）
 function projectToSegment(

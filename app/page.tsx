@@ -291,6 +291,14 @@ export default function Home() {
           </div>
           <p className="prose-jp mt-4 max-w-xl text-sm text-muted">
             YouTube「Holiday Ideas」の絶景まとめ動画。気になった道は、そのままコースの詳細ページで通行規制や立ち寄りスポットまで確認できます。
+            じっくり読みたい人には、紹介コースを1枚の地図で俯瞰できる
+            <Link
+              href="/features"
+              className="underline decoration-line underline-offset-4 transition-colors hover:text-text"
+            >
+              特集記事版
+            </Link>
+            も。
           </p>
         </Reveal>
         <div className="mt-10 grid gap-8 md:grid-cols-2">

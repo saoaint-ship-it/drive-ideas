@@ -3,6 +3,7 @@ import { getAllCourses, getAllPrefectures } from "@/lib/courses";
 import { getAllArticles } from "@/lib/articles";
 import { collections } from "@/data/collections";
 import { plans } from "@/data/plans";
+import { features } from "@/data/features";
 import { site } from "@/config/site";
 
 // 検索エンジン向けサイトマップ（公開時にそのまま使える）
@@ -13,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${site.url}/collections`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${site.url}/pref`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${site.url}/plans`, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${site.url}/features`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${site.url}/videos`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${site.url}/map`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${site.url}/journal`, changeFrequency: "daily", priority: 0.9 },
@@ -54,6 +56,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const featurePages: MetadataRoute.Sitemap = features.map((f) => ({
+    url: `${site.url}/features/${f.slug}`,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
   return [
     ...staticPages,
     ...coursePages,
@@ -61,5 +69,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...collectionPages,
     ...prefPages,
     ...planPages,
+    ...featurePages,
   ];
 }

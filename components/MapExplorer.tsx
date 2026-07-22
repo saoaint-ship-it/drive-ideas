@@ -2,8 +2,8 @@
 
 import { useCallback, useMemo, useState } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import CourseMap from "@/components/map/CourseMap";
 import FilterPanel from "@/components/FilterPanel";
 import SpecMeter from "@/components/SpecMeter";
 import SmartImage from "@/components/SmartImage";
@@ -22,9 +22,15 @@ type Props = {
   courses: Course[];
 };
 
+// 空撮動画と同じネオン画風の俯瞰マップ(クライアント側でのみ描画)
+const NeonOverviewMap = dynamic(
+  () => import("@/components/map/providers/NeonOverviewMap"),
+  { ssr: false }
+);
+
 // 日本全体が収まる初期表示
 const JAPAN_CENTER = { lat: 38.5, lng: 137.0 };
-const JAPAN_ZOOM = 4.5;
+const JAPAN_ZOOM = 4.3;
 
 export default function MapExplorer({ courses }: Props) {
   const router = useRouter();
@@ -56,22 +62,15 @@ export default function MapExplorer({ courses }: Props) {
     [results, selectedSlug]
   );
 
-  const markers = useMemo(
+  const items = useMemo(
     () =>
       results.map((c) => ({
+        slug: c.slug,
+        name: c.name,
         lat: c.center.lat,
         lng: c.center.lng,
-        type: "展望" as const,
-        name: c.name,
+        path: c.path,
       })),
-    [results]
-  );
-
-  const handleMarkerClick = useCallback(
-    (name: string) => {
-      const course = results.find((c) => c.name === name);
-      setSelectedSlug(course?.slug ?? null);
-    },
     [results]
   );
 
@@ -79,13 +78,13 @@ export default function MapExplorer({ courses }: Props) {
 
   return (
     <div className="relative h-[calc(100dvh-3.5rem)] w-full overflow-hidden">
-      {/* 地図本体 */}
+      {/* 地図本体(空撮動画と同じネオン画風) */}
       <div className="absolute inset-0">
-        <CourseMap
+        <NeonOverviewMap
+          items={items}
           center={JAPAN_CENTER}
           zoom={JAPAN_ZOOM}
-          markers={markers}
-          onMarkerClick={handleMarkerClick}
+          onSelect={(slug) => setSelectedSlug(slug)}
         />
       </div>
 

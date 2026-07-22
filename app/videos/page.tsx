@@ -4,6 +4,7 @@ import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
 import { videos, formatVideoTime } from "@/data/videos";
+import { getFeatureByVideoId } from "@/data/features";
 import { getCourseBySlug } from "@/lib/courses";
 import { site } from "@/config/site";
 
@@ -42,14 +43,24 @@ export default function VideosPage() {
             {/* 動画本体 */}
             <div>
               <YouTubeEmbed youtubeId={video.id} title={video.title} />
-              <a
-                href={`https://youtu.be/${video.id}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-block text-sm text-muted transition-colors hover:text-text"
-              >
-                YouTubeで見る →
-              </a>
+              <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+                <a
+                  href={`https://youtu.be/${video.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted transition-colors hover:text-text"
+                >
+                  YouTubeで見る →
+                </a>
+                {getFeatureByVideoId(video.id) && (
+                  <Link
+                    href={`/features/${getFeatureByVideoId(video.id)!.slug}`}
+                    className="text-sm text-muted underline decoration-line underline-offset-4 transition-colors hover:text-signal"
+                  >
+                    この特集を記事と地図で読む →
+                  </Link>
+                )}
+              </div>
             </div>
 
             {/* チャプター＝登場するコース一覧 */}
