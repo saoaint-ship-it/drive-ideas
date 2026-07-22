@@ -8,6 +8,7 @@ import { site } from "@/config/site";
 
 const nav = [
   { href: "/courses", label: "COURSES", jp: "コースを探す" },
+  { href: "/plans", label: "PLANS", jp: "モデルプラン" },
   { href: "/videos", label: "VIDEOS", jp: "動画で見る" },
   { href: "/map", label: "MAP", jp: "全国マップ" },
   { href: "/journal", label: "JOURNAL", jp: "読み物" },

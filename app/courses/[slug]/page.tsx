@@ -14,6 +14,7 @@ import AffiliateBox from "@/components/AffiliateBox";
 import AffiliateDisclosure from "@/components/AffiliateDisclosure";
 import { isAffiliateActive } from "@/config/affiliates";
 import { getVideoAppearancesForCourse, formatVideoTime } from "@/data/videos";
+import { roadStats } from "@/data/roadStats";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -53,6 +54,7 @@ export default async function CourseDetailPage({ params }: Props) {
 
   const related = getRelatedCourses(course, 3);
   const videoAppearances = getVideoAppearancesForCourse(course.slug);
+  const stats = roadStats[course.slug];
 
   // 写真が実際に置かれている枠だけを表示する（未設置の枠はセクションごと隠す）
   const galleryImages = course.gallery.filter(publicFileExists);
@@ -144,6 +146,33 @@ export default async function CourseDetailPage({ params }: Props) {
             <span>ベストシーズン {course.bestSeasons.join("・")}</span>
             {course.narrowRoadWarning && <span>車幅注意</span>}
           </div>
+          {stats && (
+            <div className="mt-3 border-t border-line pt-3">
+              <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-muted">
+                <span>
+                  カーブ{" "}
+                  <span className="font-mono text-text/80">{stats.corners}</span>
+                  箇所
+                </span>
+                <span>
+                  うちヘアピン{" "}
+                  <span className="font-mono text-text/80">{stats.hairpins}</span>
+                  箇所
+                </span>
+                {stats.maxGradientPct !== null && (
+                  <span>
+                    最大勾配{" "}
+                    <span className="font-mono text-text/80">
+                      約{stats.maxGradientPct}%
+                    </span>
+                  </span>
+                )}
+                <span className="text-muted/70">
+                  ※ルート形状・標高データからの自動計算値（目安）
+                </span>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

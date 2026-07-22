@@ -8,7 +8,13 @@ import JapanSilhouette from "@/components/JapanSilhouette";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
-import { getFeaturedCourses, getCoursesByMonth } from "@/lib/courses";
+import {
+  getFeaturedCourses,
+  getCoursesByMonth,
+  getCourseBySlug,
+} from "@/lib/courses";
+import { collections } from "@/data/collections";
+import { plans } from "@/data/plans";
 import { getAllArticles } from "@/lib/articles";
 import { videos } from "@/data/videos";
 import { CATEGORY_LABELS, type ArticleCategory } from "@/types/article";
@@ -169,7 +175,82 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
+
+          {/* テーマから探すチップ */}
+          <Reveal>
+            <div className="mt-10 flex flex-wrap items-center gap-2.5">
+              {collections.map((col) => (
+                <Link
+                  key={col.slug}
+                  href={`/collections/${col.slug}`}
+                  className="border border-line px-4 py-2 text-xs transition-colors hover:border-black/40"
+                >
+                  {col.label}
+                </Link>
+              ))}
+              <Link
+                href="/pref"
+                className="border border-line px-4 py-2 text-xs transition-colors hover:border-black/40"
+              >
+                都道府県から探す →
+              </Link>
+            </div>
+          </Reveal>
         </div>
+      </section>
+
+      {/* 3.7 日帰りモデルプラン */}
+      <section className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-40">
+        <Reveal>
+          <div className="flex items-end justify-between">
+            <SectionHeading
+              label="Model Plans"
+              title="そのまま走れる、日帰りプラン。"
+            />
+            <Link
+              href="/plans"
+              className="hidden shrink-0 text-sm text-muted transition-colors hover:text-text md:block"
+            >
+              すべてのプラン →
+            </Link>
+          </div>
+          <p className="prose-jp mt-4 max-w-xl text-sm text-muted">
+            出発時刻から立ち寄りまで組んだ1日の設計図。迷ったらこのまま走ってください。
+          </p>
+        </Reveal>
+        <div className="mt-10 grid gap-8 md:grid-cols-3">
+          {plans.slice(0, 3).map((plan) => {
+            const hero = getCourseBySlug(plan.courseSlugs[0]);
+            return (
+              <Reveal key={plan.slug}>
+                <Link href={`/plans/${plan.slug}`} className="group block">
+                  {hero && (
+                    <div className="img-hover relative aspect-[16/9]">
+                      <SmartImage
+                        src={hero.heroImage}
+                        alt={plan.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover"
+                      />
+                    </div>
+                  )}
+                  <p className="label-en mt-4">{plan.origin}発</p>
+                  <p className="mt-1.5 font-medium leading-snug">{plan.title}</p>
+                  <p className="mt-1 line-clamp-1 text-xs text-muted">
+                    {plan.catchcopy}
+                  </p>
+                </Link>
+              </Reveal>
+            );
+          })}
+        </div>
+        <Link
+          href="/plans"
+          className="mt-10 block text-sm text-muted md:hidden"
+        >
+          すべてのプラン →
+        </Link>
       </section>
 
       {/* 4. 全国マップへの導線 */}

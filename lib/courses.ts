@@ -55,3 +55,34 @@ export function getCoursesBySlugs(slugs: string[]): Course[] {
     .map((s) => getCourseBySlug(s))
     .filter((c): c is Course => Boolean(c));
 }
+
+// コースが存在する都道府県の一覧(登場順ではなく地方順で安定させる)
+const REGION_ORDER: Region[] = [
+  "北海道",
+  "東北",
+  "関東",
+  "中部",
+  "近畿",
+  "中国",
+  "四国",
+  "九州・沖縄",
+];
+
+export function getAllPrefectures(): { name: string; count: number }[] {
+  const map = new Map<string, { count: number; regionIdx: number }>();
+  for (const c of courses) {
+    const idx = REGION_ORDER.indexOf(c.region);
+    for (const p of c.prefectures) {
+      const cur = map.get(p);
+      if (cur) cur.count++;
+      else map.set(p, { count: 1, regionIdx: idx });
+    }
+  }
+  return [...map.entries()]
+    .sort((a, b) => a[1].regionIdx - b[1].regionIdx || b[1].count - a[1].count)
+    .map(([name, v]) => ({ name, count: v.count }));
+}
+
+export function getCoursesByPrefecture(pref: string): Course[] {
+  return courses.filter((c) => c.prefectures.includes(pref));
+}
