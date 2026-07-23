@@ -9,6 +9,7 @@ import CourseCard from "@/components/CourseCard";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import { getAllCourses, getCourseBySlug, getRelatedCourses } from "@/lib/courses";
+import { getSimilarCourses } from "@/lib/similar";
 import { publicFileExists } from "@/lib/files";
 import { site } from "@/config/site";
 import AffiliateBox from "@/components/AffiliateBox";
@@ -55,6 +56,7 @@ export default async function CourseDetailPage({ params }: Props) {
   if (!course) notFound();
 
   const related = getRelatedCourses(course, 3);
+  const similar = getSimilarCourses(course, 3);
   const videoAppearances = getVideoAppearancesForCourse(course.slug);
   const stats = roadStats[course.slug];
 
@@ -383,6 +385,29 @@ export default async function CourseDetailPage({ params }: Props) {
               title={`${course.prefectures[0]}周辺の宿を探す`}
             />
             <AffiliateBox id="rentalcar" />
+          </div>
+        </section>
+      )}
+
+      {/* 10.9 似ているコース（数値プロファイルが近い道） */}
+      {similar.length > 0 && (
+        <section className="mx-auto max-w-7xl px-5 pt-24 md:px-8 md:pt-40">
+          <SectionHeading label="Similar Roads" title="似ているコース" />
+          <p className="prose-jp mt-3 max-w-2xl text-sm text-muted">
+            距離・標高・カーブ・道の種類などの数値プロファイルが、この道に近いコースです。
+          </p>
+          <div className="mt-8 grid gap-10 md:grid-cols-3">
+            {similar.map((c) => (
+              <CourseCard key={c.slug} course={c} />
+            ))}
+          </div>
+          <div className="mt-8">
+            <Link
+              href={`/compare?c=${[course.slug, ...similar.map((c) => c.slug)].join(",")}`}
+              className="inline-block border border-line px-4 py-2 text-sm transition-colors hover:border-black/40"
+            >
+              この道と似た{similar.length}コースをまとめて数値比較する →
+            </Link>
           </div>
         </section>
       )}
