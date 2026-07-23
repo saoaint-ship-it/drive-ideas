@@ -4,6 +4,7 @@ import { coursesExtra2 } from "@/data/courses-extra2";
 import { coursesExtra3 } from "@/data/courses-extra3";
 import { coursesExtra4 } from "@/data/courses-extra4";
 import { coursesExtra5 } from "@/data/courses-extra5";
+import { coursesExtra6 } from "@/data/courses-extra6";
 import type { Course, Region } from "@/types/course";
 
 // データ取得層。ページからは必ずこの関数経由でアクセスする
@@ -16,6 +17,7 @@ const courses: Course[] = [
   ...coursesExtra3,
   ...coursesExtra4,
   ...coursesExtra5,
+  ...coursesExtra6,
 ];
 
 export function getAllCourses(): Course[] {

@@ -499,5 +499,35 @@ export const roadStats: Record<string, RoadStats> = {
   "hairpins": 0,
   "corners": 1,
   "maxGradientPct": 2.7
+ },
+ "okuoi-sesso": {
+  "hairpins": 3,
+  "corners": 26,
+  "maxGradientPct": 8.7
+ },
+ "seseragi-kaido": {
+  "hairpins": 0,
+  "corners": 10,
+  "maxGradientPct": 3.7
+ },
+ "noto-kongo": {
+  "hairpins": 0,
+  "corners": 18,
+  "maxGradientPct": 1.3
+ },
+ "echizen-coast-305": {
+  "hairpins": 2,
+  "corners": 16,
+  "maxGradientPct": 6
+ },
+ "pearl-road": {
+  "hairpins": 1,
+  "corners": 37,
+  "maxGradientPct": 4.5
+ },
+ "notojima-loop": {
+  "hairpins": 1,
+  "corners": 22,
+  "maxGradientPct": 1
  }
 };

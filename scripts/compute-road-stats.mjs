@@ -21,6 +21,7 @@ const files = [
   "data/courses-extra3.ts",
   "data/courses-extra4.ts",
   "data/courses-extra5.ts",
+  "data/courses-extra6.ts",
 ];
 const courses = [];
 for (const f of files) {
