@@ -4,6 +4,7 @@ import { getAllArticles } from "@/lib/articles";
 import { collections } from "@/data/collections";
 import { plans } from "@/data/plans";
 import { features } from "@/data/features";
+import { RANKING_METRICS } from "@/lib/rankings";
 import { site } from "@/config/site";
 
 // 検索エンジン向けサイトマップ（公開時にそのまま使える）
@@ -14,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${site.url}/collections`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${site.url}/pref`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${site.url}/plans`, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${site.url}/rankings`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${site.url}/features`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${site.url}/videos`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${site.url}/map`, changeFrequency: "weekly", priority: 0.8 },
@@ -62,6 +64,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const rankingPages: MetadataRoute.Sitemap = RANKING_METRICS.map((m) => ({
+    url: `${site.url}/rankings/${m.key}`,
+    changeFrequency: "weekly",
+    priority: 0.7,
+  }));
+
   return [
     ...staticPages,
     ...coursePages,
@@ -70,5 +78,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...prefPages,
     ...planPages,
     ...featurePages,
+    ...rankingPages,
   ];
 }

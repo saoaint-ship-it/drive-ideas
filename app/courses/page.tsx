@@ -40,6 +40,12 @@ export default function CoursesPage() {
           >
             都道府県から →
           </Link>
+          <Link
+            href="/rankings"
+            className="px-2 py-1.5 text-xs text-muted transition-colors hover:text-text"
+          >
+            データで見るランキング →
+          </Link>
         </div>
       </div>
       <div className="mt-10">

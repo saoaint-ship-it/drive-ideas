@@ -15,6 +15,7 @@ import AffiliateDisclosure from "@/components/AffiliateDisclosure";
 import { isAffiliateActive } from "@/config/affiliates";
 import { getVideoAppearancesForCourse, formatVideoTime } from "@/data/videos";
 import { roadStats } from "@/data/roadStats";
+import CourseRankBadges from "@/components/CourseRankBadges";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -173,6 +174,8 @@ export default async function CourseDetailPage({ params }: Props) {
               </div>
             </div>
           )}
+          {/* データに基づく全国順位（上位に入った指標だけ表示） */}
+          <CourseRankBadges slug={course.slug} />
         </div>
       </section>
 

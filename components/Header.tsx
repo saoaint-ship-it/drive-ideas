@@ -8,6 +8,7 @@ import { site } from "@/config/site";
 
 const nav = [
   { href: "/courses", label: "COURSES", jp: "コースを探す" },
+  { href: "/rankings", label: "RANKINGS", jp: "ランキング" },
   { href: "/plans", label: "PLANS", jp: "モデルプラン" },
   { href: "/videos", label: "VIDEOS", jp: "動画で見る" },
   { href: "/map", label: "MAP", jp: "全国マップ" },
@@ -40,7 +41,10 @@ export default function Header() {
         </Link>
 
         {/* デスクトップナビ */}
-        <nav className="hidden items-center gap-8 md:flex" aria-label="メイン">
+        <nav
+          className="hidden items-center gap-5 md:flex lg:gap-8"
+          aria-label="メイン"
+        >
           {nav.map((item) => {
             const active = pathname.startsWith(item.href);
             return (

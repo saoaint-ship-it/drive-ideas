@@ -10,6 +10,8 @@ import {
   emptyFilter,
   filterToParams,
   paramsToFilter,
+  sortCourses,
+  SORT_OPTIONS,
   UNLIMITED,
   type CourseFilter,
 } from "@/lib/filter";
@@ -42,7 +44,7 @@ export default function CourseExplorer({ courses }: Props) {
   );
 
   const results = useMemo(
-    () => applyFilter(courses, filter),
+    () => sortCourses(applyFilter(courses, filter), filter.sort),
     [courses, filter]
   );
 
@@ -114,6 +116,43 @@ export default function CourseExplorer({ courses }: Props) {
 
         {/* 結果 */}
         <div className="min-w-0 flex-1">
+          {/* キーワード検索＋並べ替え */}
+          <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="relative w-full sm:max-w-xs">
+              <label htmlFor="course-search" className="sr-only">
+                キーワードで探す
+              </label>
+              <input
+                id="course-search"
+                type="search"
+                value={filter.q}
+                onChange={(e) => setFilter({ ...filter, q: e.target.value })}
+                placeholder="道の名前・都道府県で検索"
+                className="w-full border border-line bg-transparent px-3.5 py-2.5 text-sm placeholder:text-muted focus:border-black/40 focus:outline-none"
+              />
+            </div>
+            <div className="flex items-center gap-2 sm:ml-auto">
+              <label
+                htmlFor="course-sort"
+                className="whitespace-nowrap text-xs text-muted"
+              >
+                並べ替え
+              </label>
+              <select
+                id="course-sort"
+                value={filter.sort}
+                onChange={(e) => setFilter({ ...filter, sort: e.target.value })}
+                className="border border-line bg-ink px-2.5 py-2.5 text-sm text-text focus:border-black/40 focus:outline-none"
+              >
+                {SORT_OPTIONS.map((o) => (
+                  <option key={o.value} value={o.value}>
+                    {o.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
           <p className="font-mono text-xs text-muted" aria-live="polite">
             {results.length} COURSES
           </p>
