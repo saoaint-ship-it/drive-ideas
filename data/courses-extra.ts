@@ -414,10 +414,10 @@ export const coursesExtra: Course[] = [
     catchcopy: "海抜0mから、雲の上へ。",
     summary:
       "日本海の海岸線から一気に標高1,100mの鉾立へ。「出羽富士」鳥海山の中腹を駆け上がるこの道の魅力は、海と山の距離感。振り返ればいつも眼下に日本海が光っている。",
-    distanceKm: 34.9,
-    durationMin: 60,
+    distanceKm: 29.9,
+    durationMin: 50,
     elevationGainM: 1100,
-    maxElevationM: 1150,
+    maxElevationM: 1154,
     windingLevel: 4,
     difficulty: "中級",
     roadTypes: ["峠", "海岸線"],
@@ -430,7 +430,7 @@ export const coursesExtra: Course[] = [
       type: "冬季閉鎖",
       period: "11月上旬〜4月下旬",
     },
-    center: { lat: 39.12, lng: 139.95 },
+    center: { lat: 39.11559, lng: 139.98704 },
     path: routePaths["chokai-blue-line"],
     spots: [
       {
@@ -455,7 +455,7 @@ export const coursesExtra: Course[] = [
         note: "展望温泉つきの人気道の駅",
       },
     ],
-    elevationProfile: [20, 300, 600, 900, 1150, 800],
+    elevationProfile: [75, 387, 753, 951, 1126, 986, 784, 553, 313],
     heroImage: "/images/courses/chokai-blue-line/hero.jpg",
     gallery: ["/images/courses/chokai-blue-line/gallery-1.jpg"],
     body: [
@@ -883,10 +883,10 @@ export const coursesExtra: Course[] = [
     catchcopy: "関東平野を見下ろす、稜線ドライブ。",
     summary:
       "筑波山の中腹を縫う旧有料道路。杉木立のワインディングを抜けると、関東平野が果てまで広がる展望が待つ。都心から近く、朝活ドライブの定番コース。",
-    distanceKm: 9.5,
-    durationMin: 25,
-    elevationGainM: 450,
-    maxElevationM: 520,
+    distanceKm: 11.3,
+    durationMin: 30,
+    elevationGainM: 477,
+    maxElevationM: 558,
     windingLevel: 3,
     difficulty: "初心者向け",
     roadTypes: ["峠"],
@@ -896,7 +896,7 @@ export const coursesExtra: Course[] = [
     bestMonths: [3, 4, 10, 11],
     narrowRoadWarning: false,
     suitableFor: ["軽", "スポーツ", "EV"],
-    center: { lat: 36.2, lng: 140.1 },
+    center: { lat: 36.22674, lng: 140.12539 },
     path: routePaths["tsukuba-purple-line"],
     spots: [
       {
@@ -920,7 +920,7 @@ export const coursesExtra: Course[] = [
         lng: 140.1,
       },
     ],
-    elevationProfile: [50, 200, 350, 520, 480],
+    elevationProfile: [313, 374, 389, 405, 329, 316, 385, 476, 558],
     heroImage: "/images/courses/tsukuba-purple-line/hero.jpg",
     gallery: ["/images/courses/tsukuba-purple-line/gallery-1.jpg"],
     body: [
@@ -1093,10 +1093,10 @@ export const coursesExtra: Course[] = [
     catchcopy: "無料になった、天空の稜線。",
     summary:
       "戸田峠から船原峠まで、達磨山の稜線をなぞる約11km。笹原の尾根から駿河湾越しの富士山を望む景観は有料道路時代から名高く、今は無料で走れる贅沢なスカイライン。",
-    distanceKm: 10.8,
+    distanceKm: 11.0,
     durationMin: 20,
-    elevationGainM: 350,
-    maxElevationM: 940,
+    elevationGainM: 378,
+    maxElevationM: 938,
     windingLevel: 4,
     difficulty: "中級",
     roadTypes: ["峠", "高原"],
@@ -1106,7 +1106,7 @@ export const coursesExtra: Course[] = [
     bestMonths: [1, 2, 4, 5, 11, 12],
     narrowRoadWarning: false,
     suitableFor: ["スポーツ", "オープン", "軽"],
-    center: { lat: 34.95, lng: 138.8 },
+    center: { lat: 34.95331, lng: 138.84134 },
     path: routePaths["nishi-izu-skyline"],
     spots: [
       {
@@ -1129,7 +1129,7 @@ export const coursesExtra: Course[] = [
         lng: 138.81,
       },
     ],
-    elevationProfile: [730, 850, 940, 880, 760],
+    elevationProfile: [729, 785, 815, 828, 907, 901, 795, 633, 667],
     heroImage: "/images/courses/nishi-izu-skyline/hero.jpg",
     gallery: ["/images/courses/nishi-izu-skyline/gallery-1.jpg", "/images/courses/nishi-izu-skyline/gallery-2.jpg"],
     body: [

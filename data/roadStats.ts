@@ -56,9 +56,9 @@ export const roadStats: Record<string, RoadStats> = {
   "maxGradientPct": 3.1
  },
  "hakone-turnpike": {
-  "hairpins": 3,
-  "corners": 47,
-  "maxGradientPct": 7.8
+  "hairpins": 0,
+  "corners": 16,
+  "maxGradientPct": 12.2
  },
  "shimanami-kaido": {
   "hairpins": 2,
@@ -101,9 +101,9 @@ export const roadStats: Record<string, RoadStats> = {
   "maxGradientPct": 5.8
  },
  "chokai-blue-line": {
-  "hairpins": 3,
-  "corners": 44,
-  "maxGradientPct": 5
+  "hairpins": 12,
+  "corners": 74,
+  "maxGradientPct": 9.8
  },
  "towada-oirase": {
   "hairpins": 0,
@@ -136,9 +136,9 @@ export const roadStats: Record<string, RoadStats> = {
   "maxGradientPct": 11.3
  },
  "tsukuba-purple-line": {
-  "hairpins": 3,
-  "corners": 20,
-  "maxGradientPct": 7.2
+  "hairpins": 0,
+  "corners": 38,
+  "maxGradientPct": 6.4
  },
  "hakusan-shirakawago": {
   "hairpins": 4,
@@ -151,9 +151,9 @@ export const roadStats: Record<string, RoadStats> = {
   "maxGradientPct": 0.1
  },
  "nishi-izu-skyline": {
-  "hairpins": 4,
-  "corners": 59,
-  "maxGradientPct": 4.4
+  "hairpins": 2,
+  "corners": 36,
+  "maxGradientPct": 11.8
  },
  "fujisan-skyline": {
   "hairpins": 8,

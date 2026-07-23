@@ -711,10 +711,10 @@ export const courses: Course[] = [
     catchcopy: "13kmのヒルクライム、頂は絶景。",
     summary:
       "小田原から大観山まで、標高差約1,000mを一気に駆け上がる全長約14kmの有料道路。幅の広い高速コーナーが連続する線形は自動車CMの撮影聖地。終点の大観山からは芦ノ湖越しの富士山が待つ。",
-    distanceKm: 13.8,
+    distanceKm: 11.4,
     durationMin: 25,
-    elevationGainM: 980,
-    maxElevationM: 1011,
+    elevationGainM: 856,
+    maxElevationM: 996,
     windingLevel: 3,
     difficulty: "初心者向け",
     roadTypes: ["峠"],
@@ -724,7 +724,7 @@ export const courses: Course[] = [
     bestMonths: [1, 3, 4, 10, 11, 12],
     narrowRoadWarning: false,
     suitableFor: ["スポーツ", "オープン", "EV", "ミニバン"],
-    center: { lat: 35.225, lng: 139.075 },
+    center: { lat: 35.21047, lng: 139.09548 },
     path: routePaths["hakone-turnpike"],
     spots: [
       {
@@ -749,7 +749,7 @@ export const courses: Course[] = [
         note: "紅葉と相模湾を絡めた一枚が撮れる",
       },
     ],
-    elevationProfile: [30, 180, 350, 530, 700, 860, 1011],
+    elevationProfile: [242, 416, 510, 606, 725, 830, 939, 926, 996],
     heroImage: "/images/courses/hakone-turnpike/hero.jpg",
     gallery: [
       "/images/courses/hakone-turnpike/gallery-1.jpg",
