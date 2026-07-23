@@ -147,7 +147,7 @@ export const roadStats: Record<string, RoadStats> = {
  },
  "chirihama-nagisa": {
   "hairpins": 0,
-  "corners": 8,
+  "corners": 0,
   "maxGradientPct": 0.1
  },
  "nishi-izu-skyline": {
@@ -156,9 +156,9 @@ export const roadStats: Record<string, RoadStats> = {
   "maxGradientPct": 4.4
  },
  "fujisan-skyline": {
-  "hairpins": 1,
-  "corners": 7,
-  "maxGradientPct": 7.4
+  "hairpins": 8,
+  "corners": 40,
+  "maxGradientPct": 10.1
  },
  "kaida-kogen": {
   "hairpins": 0,
