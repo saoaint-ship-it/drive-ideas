@@ -186,9 +186,9 @@ export const roadStats: Record<string, RoadStats> = {
   "maxGradientPct": 5.9
  },
  "ise-shima-skyline": {
-  "hairpins": 0,
-  "corners": 14,
-  "maxGradientPct": 10.7
+  "hairpins": 1,
+  "corners": 45,
+  "maxGradientPct": 10.1
  },
  "oku-biwako-parkway": {
   "hairpins": 1,
