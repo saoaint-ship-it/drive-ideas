@@ -529,5 +529,15 @@ export const roadStats: Record<string, RoadStats> = {
   "hairpins": 1,
   "corners": 22,
   "maxGradientPct": 1
+ },
+ "nishiizu-kendo17": {
+  "hairpins": 3,
+  "corners": 61,
+  "maxGradientPct": 6.3
+ },
+ "r249-okunoto": {
+  "hairpins": 0,
+  "corners": 15,
+  "maxGradientPct": 1.9
  }
 };
