@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import SmartImage from "@/components/SmartImage";
 import SpecMeter from "@/components/SpecMeter";
@@ -176,6 +177,14 @@ export default async function CourseDetailPage({ params }: Props) {
           )}
           {/* データに基づく全国順位（上位に入った指標だけ表示） */}
           <CourseRankBadges slug={course.slug} />
+          <div className="mt-4">
+            <Link
+              href={`/compare?c=${course.slug}`}
+              className="text-xs text-muted underline underline-offset-4 transition-colors hover:text-text"
+            >
+              この道を他のコースと数値で比べる →
+            </Link>
+          </div>
         </div>
       </section>
 

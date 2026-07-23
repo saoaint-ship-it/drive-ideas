@@ -46,6 +46,12 @@ export default function CoursesPage() {
           >
             データで見るランキング →
           </Link>
+          <Link
+            href="/compare"
+            className="px-2 py-1.5 text-xs text-muted transition-colors hover:text-text"
+          >
+            コースを比較する →
+          </Link>
         </div>
       </div>
       <div className="mt-10">
