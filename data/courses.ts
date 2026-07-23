@@ -12,10 +12,10 @@ export const courses: Course[] = [
     catchcopy: "地平線まで、一直線。",
     summary:
       "斜里町の丘陵を貫く全長約28kmの直線路。走るほどに道が空へ吸い込まれていくような錯覚に包まれる、北海道を代表する絶景ロード。信号も交通量も少なく、初めての北海道ドライブにも最適。",
-    distanceKm: 28.1,
+    distanceKm: 27.6,
     durationMin: 40,
     elevationGainM: 210,
-    maxElevationM: 128,
+    maxElevationM: 74,
     windingLevel: 1,
     difficulty: "初心者向け",
     roadTypes: ["街道"],
@@ -24,7 +24,7 @@ export const courses: Course[] = [
     bestMonths: [6, 7, 8, 9],
     narrowRoadWarning: false,
     suitableFor: ["軽", "ミニバン", "EV", "オープン"],
-    center: { lat: 43.995, lng: 144.82 },
+    center: { lat: 44.01442, lng: 144.9201 },
     path: routePaths["sky-road-shari"],
     spots: [
       {
@@ -55,7 +55,7 @@ export const courses: Course[] = [
         note: "この先知床方面はスタンドが少ない",
       },
     ],
-    elevationProfile: [128, 112, 96, 82, 66, 50, 34, 18],
+    elevationProfile: [74, 16, 5, 5, 13, 11, 14, 8, 5],
     heroImage: "/images/courses/sky-road-shari/hero.jpg",
     gallery: [
       "/images/courses/sky-road-shari/gallery-1.jpg",
@@ -86,10 +86,10 @@ export const courses: Course[] = [
     catchcopy: "48のカーブを、数えながら登る。",
     summary:
       "日光市街と中禅寺湖を結ぶ、日本屈指のつづら折り。「い」から「ん」まで48のカーブ標識を数えながら、標高差400m超を一気に駆け上がる。紅葉シーズンの美しさは全国区。",
-    distanceKm: 13.5,
+    distanceKm: 25.3,
     durationMin: 35,
-    elevationGainM: 440,
-    maxElevationM: 1274,
+    elevationGainM: 1085,
+    maxElevationM: 1354,
     windingLevel: 5,
     difficulty: "中級",
     roadTypes: ["峠"],
@@ -98,7 +98,7 @@ export const courses: Course[] = [
     bestMonths: [5, 10, 11],
     narrowRoadWarning: false,
     suitableFor: ["スポーツ", "EV", "軽"],
-    center: { lat: 36.736, lng: 139.525 },
+    center: { lat: 36.74574, lng: 139.51159 },
     path: routePaths["irohazaka"],
     spots: [
       {
@@ -128,7 +128,7 @@ export const courses: Course[] = [
         lng: 139.4988,
       },
     ],
-    elevationProfile: [840, 905, 985, 1070, 1150, 1220, 1274, 1272, 1269],
+    elevationProfile: [719, 1040, 1205, 1287, 1137, 998, 1003, 1191, 1296],
     heroImage: "/images/courses/irohazaka/hero.jpg",
     gallery: [
       "/images/courses/irohazaka/gallery-1.jpg",
@@ -316,10 +316,10 @@ export const courses: Course[] = [
     catchcopy: "エメラルドの海へ、まっすぐに。",
     summary:
       "コバルトブルーの海士ヶ瀬戸に架かる全長1,780mの角島大橋を渡り、島を一周する海のドライブコース。無料で渡れる離島架橋としては国内屈指の長さで、CMロケ地としても有名。",
-    distanceKm: 18.3,
+    distanceKm: 10.7,
     durationMin: 35,
-    elevationGainM: 120,
-    maxElevationM: 65,
+    elevationGainM: 201,
+    maxElevationM: 72,
     windingLevel: 2,
     difficulty: "初心者向け",
     roadTypes: ["海岸線", "橋・海上"],
@@ -328,7 +328,7 @@ export const courses: Course[] = [
     bestMonths: [4, 5, 6, 7, 8],
     narrowRoadWarning: false,
     suitableFor: ["軽", "ミニバン", "スポーツ", "EV", "オープン"],
-    center: { lat: 34.352, lng: 130.875 },
+    center: { lat: 34.35379, lng: 130.88419 },
     path: routePaths["tsunoshima-ohashi"],
     spots: [
       {
@@ -358,7 +358,7 @@ export const courses: Course[] = [
         lng: 130.8815,
       },
     ],
-    elevationProfile: [12, 18, 8, 22, 42],
+    elevationProfile: [61, 15, 37, 15, 23, 53, 30, 25, 9],
     heroImage: "/images/courses/tsunoshima-ohashi/hero.jpg",
     gallery: [
       "/images/courses/tsunoshima-ohashi/gallery-1.jpg",
@@ -475,10 +475,10 @@ export const courses: Course[] = [
     catchcopy: "火山の懐を、雲より高く。",
     summary:
       "高湯温泉から浄土平を経て土湯峠へ。吾妻連峰の中腹、平均標高1,350mを縫う全長約29kmの山岳道路。荒涼とした火山礫の風景は「日本離れしている」と形容される東北屈指の絶景ルート。",
-    distanceKm: 28.7,
+    distanceKm: 40.1,
     durationMin: 60,
-    elevationGainM: 950,
-    maxElevationM: 1622,
+    elevationGainM: 1494,
+    maxElevationM: 1604,
     windingLevel: 4,
     difficulty: "中級",
     roadTypes: ["峠", "高原"],
@@ -493,7 +493,7 @@ export const courses: Course[] = [
       period: "11月中旬〜4月上旬",
       openingDateNote: "例年4月上旬に開通。開通直後は「雪の回廊」が見られる",
     },
-    center: { lat: 37.73, lng: 140.3 },
+    center: { lat: 37.74592, lng: 140.2807 },
     path: routePaths["bandai-azuma-skyline"],
     spots: [
       {
@@ -524,7 +524,7 @@ export const courses: Course[] = [
         lng: 140.271,
       },
     ],
-    elevationProfile: [750, 950, 1150, 1350, 1500, 1622, 1560, 1400, 1240],
+    elevationProfile: [199, 314, 761, 1022, 1321, 1549, 1525, 1267, 1033],
     heroImage: "/images/courses/bandai-azuma-skyline/hero.jpg",
     gallery: [
       "/images/courses/bandai-azuma-skyline/gallery-1.jpg",
@@ -556,10 +556,10 @@ export const courses: Course[] = [
     catchcopy: "県境の空を、横断する。",
     summary:
       "岩手と秋田の県境、八幡平の山頂部を東西に横断する全長約27kmの山岳道路。なだらかな楯状火山(アスピーテ)の地形を活かした線形は走りやすく、雪の回廊・新緑・紅葉と季節の見どころが濃い。",
-    distanceKm: 27.0,
+    distanceKm: 30.7,
     durationMin: 50,
-    elevationGainM: 980,
-    maxElevationM: 1541,
+    elevationGainM: 950,
+    maxElevationM: 1564,
     windingLevel: 3,
     difficulty: "中級",
     roadTypes: ["高原", "峠"],
@@ -573,7 +573,7 @@ export const courses: Course[] = [
       period: "11月上旬〜4月中旬",
       openingDateNote: "開通直後は高さ数mの「雪の回廊」が名物。開通後もしばらく夜間通行止め",
     },
-    center: { lat: 39.955, lng: 140.89 },
+    center: { lat: 39.953, lng: 140.85075 },
     path: routePaths["hachimantai-aspite-line"],
     spots: [
       {
@@ -604,7 +604,7 @@ export const courses: Course[] = [
         lng: 140.935,
       },
     ],
-    elevationProfile: [560, 780, 1000, 1220, 1400, 1541, 1450, 1250, 1000],
+    elevationProfile: [661, 937, 1136, 1327, 1533, 1457, 1186, 876, 815],
     heroImage: "/images/courses/hachimantai-aspite-line/hero.jpg",
     gallery: [
       "/images/courses/hachimantai-aspite-line/gallery-1.jpg",
@@ -858,10 +858,10 @@ export const courses: Course[] = [
     catchcopy: "天空へ続く、一車線。",
     summary:
       "石鎚山系の稜線、標高1,300〜1,700mを縫う約27kmの町道。笹原の尾根に一本の道が延びる風景は自動車CMで一躍有名になった。ほぼ全線1車線の「腕に覚えのある人向け」天空ロード。",
-    distanceKm: 27.0,
+    distanceKm: 12.6,
     durationMin: 70,
-    elevationGainM: 890,
-    maxElevationM: 1690,
+    elevationGainM: 530,
+    maxElevationM: 1695,
     windingLevel: 5,
     difficulty: "上級",
     roadTypes: ["高原", "峠"],
@@ -875,7 +875,7 @@ export const courses: Course[] = [
       period: "12月上旬〜4月中旬",
       openingDateNote: "開通後も凍結・落石による臨時通行止めあり",
     },
-    center: { lat: 33.81, lng: 133.2 },
+    center: { lat: 33.77879, lng: 133.18899 },
     path: routePaths["ufo-line"],
     spots: [
       {
@@ -906,7 +906,7 @@ export const courses: Course[] = [
         lng: 133.271,
       },
     ],
-    elevationProfile: [1100, 1300, 1450, 1600, 1690, 1650, 1550, 1490],
+    elevationProfile: [1501, 1428, 1454, 1434, 1530, 1600, 1660, 1672, 1597],
     heroImage: "/images/courses/ufo-line/hero.jpg",
     gallery: [
       "/images/courses/ufo-line/gallery-1.jpg",

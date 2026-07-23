@@ -81,8 +81,8 @@ export const coursesExtra3: Course[] = [
       "稚内市東部、宗谷丘陵に伸びる「白い道」。ホタテの貝殻を砕いて敷いた真っ白な路面が、なだらかな緑の丘陵の中を一直線に貫く。日本最北の地ならではの独特な景観で、SNSでも人気の撮影スポット。",
     distanceKm: 11.7,
     durationMin: 20,
-    elevationGainM: 12,
-    maxElevationM: 17,
+    elevationGainM: 64,
+    maxElevationM: 122,
     windingLevel: 1,
     difficulty: "初心者向け",
     roadTypes: ["高原"],
@@ -91,7 +91,7 @@ export const coursesExtra3: Course[] = [
     bestMonths: [5, 6, 7, 8, 9, 10],
     narrowRoadWarning: true,
     suitableFor: ["軽", "ミニバン", "EV"],
-    center: { lat: 45.504, lng: 141.936 },
+    center: { lat: 45.5173, lng: 141.9123 },
     path: routePaths["soya-white-road"],
     spots: [
       {
@@ -116,7 +116,7 @@ export const coursesExtra3: Course[] = [
         note: "日本最北端・宗谷岬にほど近いエリア",
       },
     ],
-    elevationProfile: [8, 7, 8, 8, 8, 17, 8, 6, 5],
+    elevationProfile: [114, 7, 6, 10, 8, 14, 6, 7, 5],
     heroImage: "/images/courses/soya-white-road/hero.jpg",
     gallery: ["/images/courses/soya-white-road/gallery-1.jpg"],
     body: [

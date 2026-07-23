@@ -13,9 +13,9 @@ export const coursesExtra: Course[] = [
     catchcopy: "世界遺産の背骨を、越える。",
     summary:
       "ウトロから知床峠を越えて羅臼へ。世界自然遺産・知床半島を横断する国道334号は、峠から羅臼岳と国後島を同時に望む唯一無二の道。野生動物との遭遇率も日本屈指。",
-    distanceKm: 23.8,
+    distanceKm: 32.6,
     durationMin: 40,
-    elevationGainM: 740,
+    elevationGainM: 758,
     maxElevationM: 738,
     windingLevel: 3,
     difficulty: "中級",
@@ -30,7 +30,7 @@ export const coursesExtra: Course[] = [
       period: "11月上旬〜4月下旬",
       openingDateNote: "例年GW前に開通。開通直後は雪壁が残る",
     },
-    center: { lat: 44.06, lng: 145.08 },
+    center: { lat: 44.04186, lng: 145.10421 },
     path: routePaths["shiretoko-odan"],
     spots: [
       {
@@ -54,7 +54,7 @@ export const coursesExtra: Course[] = [
         lng: 145.2,
       },
     ],
-    elevationProfile: [80, 300, 550, 738, 500, 250, 30],
+    elevationProfile: [5, 86, 332, 650, 714, 566, 451, 195, 23],
     heroImage: "/images/courses/shiretoko-odan/hero.jpg",
     gallery: ["/images/courses/shiretoko-odan/gallery-1.jpg", "/images/courses/shiretoko-odan/gallery-2.jpg"],
     body: [
@@ -146,10 +146,10 @@ export const coursesExtra: Course[] = [
     catchcopy: "日本一広い牧場の、真ん中へ。",
     summary:
       "十勝・上士幌町にある日本一広い公共牧場を駆け上がる一本道。放牧された牛の間を抜けて標高800mのテラスに着くと、十勝平野が水平線のように広がる。",
-    distanceKm: 17.0,
+    distanceKm: 32.3,
     durationMin: 30,
-    elevationGainM: 560,
-    maxElevationM: 800,
+    elevationGainM: 911,
+    maxElevationM: 1101,
     windingLevel: 2,
     difficulty: "初心者向け",
     roadTypes: ["高原"],
@@ -162,7 +162,7 @@ export const coursesExtra: Course[] = [
       type: "冬季閉鎖",
       period: "12月〜4月中旬",
     },
-    center: { lat: 43.29, lng: 143.22 },
+    center: { lat: 43.36137, lng: 143.18227 },
     path: routePaths["naitai-kogen"],
     spots: [
       {
@@ -185,7 +185,7 @@ export const coursesExtra: Course[] = [
         lng: 143.3,
       },
     ],
-    elevationProfile: [340, 450, 560, 680, 800],
+    elevationProfile: [271, 383, 421, 491, 643, 840, 1039, 1101, 1062],
     heroImage: "/images/courses/naitai-kogen/hero.jpg",
     gallery: ["/images/courses/naitai-kogen/gallery-1.jpg"],
     body: [
@@ -213,10 +213,10 @@ export const coursesExtra: Course[] = [
     catchcopy: "夕日の海岸線を、北へ。",
     summary:
       "石狩から日本海に沿って北上する国道231号。左手にずっと海、正面に暑寒別岳。特に夕暮れは、海に沈む太陽と道だけの世界になる。北上するほど景色が荒々しくなるのも一興。",
-    distanceKm: 60.0,
+    distanceKm: 73.8,
     durationMin: 80,
-    elevationGainM: 150,
-    maxElevationM: 60,
+    elevationGainM: 858,
+    maxElevationM: 256,
     windingLevel: 1,
     difficulty: "初心者向け",
     roadTypes: ["海岸線"],
@@ -225,7 +225,7 @@ export const coursesExtra: Course[] = [
     bestMonths: [5, 6, 7, 8, 9],
     narrowRoadWarning: false,
     suitableFor: ["軽", "ミニバン", "スポーツ", "EV", "オープン"],
-    center: { lat: 43.6, lng: 141.45 },
+    center: { lat: 43.61324, lng: 141.39014 },
     path: routePaths["ororon-line"],
     spots: [
       {
@@ -250,7 +250,7 @@ export const coursesExtra: Course[] = [
         note: "旧商家や酒蔵が残る終着の港町",
       },
     ],
-    elevationProfile: [10, 25, 40, 60, 20, 10],
+    elevationProfile: [30, 57, 8, 208, 219, 38, 13, 55, 8],
     heroImage: "/images/courses/ororon-line/hero.jpg",
     gallery: ["/images/courses/ororon-line/gallery-1.jpg"],
     body: [
@@ -278,10 +278,10 @@ export const coursesExtra: Course[] = [
     catchcopy: "シャコタンブルーに、沿って。",
     summary:
       "余市から積丹半島の突端・神威岬へ。「積丹ブルー」と呼ばれる独特の青い海を左右に見ながら、断崖と奇岩の海岸線を行く。夏はうに丼という強力なご褒美つき。",
-    distanceKm: 45.0,
+    distanceKm: 52.7,
     durationMin: 70,
-    elevationGainM: 300,
-    maxElevationM: 120,
+    elevationGainM: 760,
+    maxElevationM: 223,
     windingLevel: 3,
     difficulty: "初心者向け",
     roadTypes: ["海岸線"],
@@ -290,7 +290,7 @@ export const coursesExtra: Course[] = [
     bestMonths: [6, 7, 8],
     narrowRoadWarning: false,
     suitableFor: ["軽", "ミニバン", "スポーツ", "EV", "オープン"],
-    center: { lat: 43.3, lng: 140.55 },
+    center: { lat: 43.28293, lng: 140.6359 },
     path: routePaths["shakotan-blue-road"],
     spots: [
       {
@@ -315,7 +315,7 @@ export const coursesExtra: Course[] = [
         note: "6〜8月は生うに丼の聖地",
       },
     ],
-    elevationProfile: [10, 60, 120, 80, 30],
+    elevationProfile: [9, 147, 9, 125, 30, 67, 68, 8, 63],
     heroImage: "/images/courses/shakotan-blue-road/hero.jpg",
     gallery: ["/images/courses/shakotan-blue-road/gallery-1.jpg"],
     body: [
@@ -483,10 +483,10 @@ export const coursesExtra: Course[] = [
     catchcopy: "渓流と湖を、一本の道で。",
     summary:
       "奥入瀬渓流に寄り添って走る国道102号から、十和田湖畔へ。木漏れ日の渓流区間と、開けた湖畔区間のコントラストが見事。新緑と紅葉、どちらの季節も外れがない。",
-    distanceKm: 25.0,
+    distanceKm: 18.5,
     durationMin: 45,
-    elevationGainM: 250,
-    maxElevationM: 420,
+    elevationGainM: 337,
+    maxElevationM: 495,
     windingLevel: 2,
     difficulty: "初心者向け",
     roadTypes: ["湖畔", "街道"],
@@ -495,7 +495,7 @@ export const coursesExtra: Course[] = [
     bestMonths: [5, 6, 10],
     narrowRoadWarning: false,
     suitableFor: ["軽", "ミニバン", "EV", "オープン"],
-    center: { lat: 40.5, lng: 140.94 },
+    center: { lat: 40.48632, lng: 140.94838 },
     path: routePaths["towada-oirase"],
     spots: [
       {
@@ -520,7 +520,7 @@ export const coursesExtra: Course[] = [
         note: "遊覧船乗り場と食事処が集まる湖畔の中心",
       },
     ],
-    elevationProfile: [200, 250, 300, 400, 420, 400],
+    elevationProfile: [274, 308, 348, 358, 420, 409, 408, 495, 407],
     heroImage: "/images/courses/towada-oirase/hero.jpg",
     gallery: ["/images/courses/towada-oirase/gallery-1.jpg", "/images/courses/towada-oirase/gallery-2.jpg"],
     body: [
@@ -548,10 +548,10 @@ export const coursesExtra: Course[] = [
     catchcopy: "表磐梯から裏磐梯へ、金の道。",
     summary:
       "会津盆地側の「表磐梯」から、八方台を越えて湖沼群の広がる「裏磐梯」へ。磐梯山の表情が峠の前後でがらりと変わる、短いながら濃密な山越えルート。",
-    distanceKm: 17.6,
+    distanceKm: 25,
     durationMin: 35,
-    elevationGainM: 550,
-    maxElevationM: 950,
+    elevationGainM: 863,
+    maxElevationM: 1190,
     windingLevel: 3,
     difficulty: "初心者向け",
     roadTypes: ["峠"],
@@ -565,7 +565,7 @@ export const coursesExtra: Course[] = [
       type: "冬季閉鎖",
       period: "11月中旬〜4月中旬",
     },
-    center: { lat: 37.61, lng: 140.05 },
+    center: { lat: 37.60364, lng: 140.04905 },
     path: routePaths["bandai-gold-line"],
     spots: [
       {
@@ -588,7 +588,7 @@ export const coursesExtra: Course[] = [
         lng: 140.05,
       },
     ],
-    elevationProfile: [500, 650, 800, 950, 850, 800],
+    elevationProfile: [478, 587, 717, 876, 1083, 1097, 882, 887, 831],
     heroImage: "/images/courses/bandai-gold-line/hero.jpg",
     gallery: ["/images/courses/bandai-gold-line/gallery-1.jpg"],
     body: [
@@ -1423,10 +1423,10 @@ export const coursesExtra: Course[] = [
     catchcopy: "五つの湖、五つの青。",
     summary:
       "若狭湾と三方五湖を分ける梅丈岳を登る有料道路。山頂公園からは、深さや塩分濃度の違いで色の異なる5つの湖と日本海を一望。テラスに置かれたソファ席は「若狭のウユニ」とも。",
-    distanceKm: 11.2,
-    durationMin: 25,
-    elevationGainM: 350,
-    maxElevationM: 395,
+    distanceKm: 7.3,
+    durationMin: 20,
+    elevationGainM: 382,
+    maxElevationM: 333,
     windingLevel: 3,
     difficulty: "初心者向け",
     roadTypes: ["峠", "湖畔"],
@@ -1436,7 +1436,7 @@ export const coursesExtra: Course[] = [
     bestMonths: [4, 5, 6, 10, 11],
     narrowRoadWarning: false,
     suitableFor: ["軽", "ミニバン", "スポーツ", "EV", "オープン"],
-    center: { lat: 35.58, lng: 135.88 },
+    center: { lat: 35.60178, lng: 135.88462 },
     path: routePaths["mikatagoko-rainbow-line"],
     spots: [
       {
@@ -1459,7 +1459,7 @@ export const coursesExtra: Course[] = [
         lng: 135.9,
       },
     ],
-    elevationProfile: [50, 180, 300, 395, 300],
+    elevationProfile: [25, 8, 6, 17, 89, 182, 202, 240, 333],
     heroImage: "/images/courses/mikatagoko-rainbow-line/hero.jpg",
     gallery: ["/images/courses/mikatagoko-rainbow-line/gallery-1.jpg"],
     body: [
@@ -1488,10 +1488,10 @@ export const coursesExtra: Course[] = [
     catchcopy: "紀伊山地の稜線を、南へ。",
     summary:
       "聖地・高野山から龍神温泉まで、紀伊山地の尾根を42km走り抜ける国道371号。関西最高峰クラスの護摩壇山を越え、雲海と原生林の中を行く「関西の屋根」ドライブ。",
-    distanceKm: 42.7,
+    distanceKm: 54.5,
     durationMin: 80,
-    elevationGainM: 900,
-    maxElevationM: 1282,
+    elevationGainM: 1475,
+    maxElevationM: 1314,
     windingLevel: 4,
     difficulty: "中級",
     roadTypes: ["峠", "高原"],
@@ -1505,7 +1505,7 @@ export const coursesExtra: Course[] = [
       type: "夜間通行止め",
       period: "冬期（12月〜3月頃）は夜間通行止め・積雪凍結あり",
     },
-    center: { lat: 34.1, lng: 135.57 },
+    center: { lat: 34.0631, lng: 135.57997 },
     path: routePaths["koya-ryujin-skyline"],
     spots: [
       {
@@ -1530,7 +1530,7 @@ export const coursesExtra: Course[] = [
         note: "日本三美人の湯。ゴールの楽しみ",
       },
     ],
-    elevationProfile: [800, 1000, 1150, 1282, 1100, 600],
+    elevationProfile: [865, 931, 1021, 1230, 1138, 1099, 598, 479, 785],
     heroImage: "/images/courses/koya-ryujin-skyline/hero.jpg",
     gallery: ["/images/courses/koya-ryujin-skyline/gallery-1.jpg"],
     body: [
@@ -1958,10 +1958,10 @@ export const coursesExtra: Course[] = [
     catchcopy: "工場夜景と瀬戸大橋、二枚看板。",
     summary:
       "水島から鷲羽山へ、瀬戸内海沿いの丘陵を走る無料のスカイライン。昼は瀬戸大橋と多島美、夜は水島コンビナートの工場夜景。一本の道で昼と夜、二つの絶景を持つ。",
-    distanceKm: 13.3,
-    durationMin: 30,
-    elevationGainM: 250,
-    maxElevationM: 200,
+    distanceKm: 9.8,
+    durationMin: 25,
+    elevationGainM: 364,
+    maxElevationM: 267,
     windingLevel: 3,
     difficulty: "初心者向け",
     roadTypes: ["峠", "海岸線"],
@@ -1970,7 +1970,7 @@ export const coursesExtra: Course[] = [
     bestMonths: [3, 4, 10, 11, 12],
     narrowRoadWarning: false,
     suitableFor: ["軽", "スポーツ", "EV"],
-    center: { lat: 34.48, lng: 133.78 },
+    center: { lat: 34.50959, lng: 133.78202 },
     path: routePaths["washuzan-skyline"],
     spots: [
       {
@@ -1994,7 +1994,7 @@ export const coursesExtra: Course[] = [
         lng: 133.81,
       },
     ],
-    elevationProfile: [20, 100, 200, 150, 60],
+    elevationProfile: [11, 73, 132, 212, 242, 179, 139, 135, 85],
     heroImage: "/images/courses/washuzan-skyline/hero.jpg",
     gallery: ["/images/courses/washuzan-skyline/gallery-1.jpg"],
     body: [
@@ -2093,10 +2093,10 @@ export const coursesExtra: Course[] = [
     catchcopy: "太平洋を、右に抱いて。",
     summary:
       "横浪半島の尾根を走る約19kmのスカイライン。右手に太平洋の水平線、左手に浦ノ内湾の静かな入り江。ひとつの道で外海と内海、二つの海を同時に見下ろす。",
-    distanceKm: 19.0,
+    distanceKm: 26.3,
     durationMin: 35,
-    elevationGainM: 300,
-    maxElevationM: 130,
+    elevationGainM: 196,
+    maxElevationM: 58,
     windingLevel: 4,
     difficulty: "中級",
     roadTypes: ["海岸線", "峠"],
@@ -2105,7 +2105,7 @@ export const coursesExtra: Course[] = [
     bestMonths: [3, 4, 5, 6, 10],
     narrowRoadWarning: false,
     suitableFor: ["スポーツ", "軽", "オープン"],
-    center: { lat: 33.42, lng: 133.37 },
+    center: { lat: 33.42858, lng: 133.36491 },
     path: routePaths["yokonami-kuroshio-line"],
     spots: [
       {
@@ -2130,7 +2130,7 @@ export const coursesExtra: Course[] = [
         note: "五色の玉石が敷き詰められた浜",
       },
     ],
-    elevationProfile: [20, 80, 130, 100, 30],
+    elevationProfile: [5, 14, 7, 27, 12, 12, 33, 19, 11],
     heroImage: "/images/courses/yokonami-kuroshio-line/hero.jpg",
     gallery: ["/images/courses/yokonami-kuroshio-line/gallery-1.jpg"],
     body: [
@@ -2223,10 +2223,10 @@ export const coursesExtra: Course[] = [
     catchcopy: "九州の屋根を、縦断する。",
     summary:
       "湯布院から くじゅう連山の麓を抜けて阿蘇へ。草原と山並みだけが続く約60kmは「日本で最も美しいドライブルート」の常連。九州ドライブの背骨であり、集大成。",
-    distanceKm: 58.0,
+    distanceKm: 81.9,
     durationMin: 90,
-    elevationGainM: 900,
-    maxElevationM: 1330,
+    elevationGainM: 1525,
+    maxElevationM: 1202,
     windingLevel: 3,
     difficulty: "中級",
     roadTypes: ["高原"],
@@ -2235,7 +2235,7 @@ export const coursesExtra: Course[] = [
     bestMonths: [4, 5, 6, 10, 11],
     narrowRoadWarning: false,
     suitableFor: ["軽", "ミニバン", "スポーツ", "EV", "オープン"],
-    center: { lat: 33.1, lng: 131.25 },
+    center: { lat: 33.15134, lng: 131.10915 },
     path: routePaths["yamanami-highway"],
     spots: [
       {
@@ -2260,7 +2260,7 @@ export const coursesExtra: Course[] = [
         note: "阿蘇五岳とくじゅうの中間展望地",
       },
     ],
-    elevationProfile: [450, 700, 1000, 1330, 1100, 800, 600],
+    elevationProfile: [447, 646, 430, 513, 532, 778, 1191, 854, 487],
     heroImage: "/images/courses/yamanami-highway/hero.jpg",
     gallery: ["/images/courses/yamanami-highway/gallery-1.jpg", "/images/courses/yamanami-highway/gallery-2.jpg"],
     body: [
@@ -2483,10 +2483,10 @@ export const coursesExtra: Course[] = [
     catchcopy: "海へ落ちていく、螺旋の橋。",
     summary:
       "沖縄本島南部、標高80mの高台から太平洋へ向かって大きくカーブしながら降りていくニライ橋・カナイ橋。橋の上から見る海の青のグラデーションは、沖縄ドライブのハイライト。",
-    distanceKm: 7.0,
+    distanceKm: 3.7,
     durationMin: 15,
-    elevationGainM: 120,
-    maxElevationM: 160,
+    elevationGainM: 122,
+    maxElevationM: 167,
     windingLevel: 2,
     difficulty: "初心者向け",
     roadTypes: ["橋・海上", "海岸線"],
@@ -2495,7 +2495,7 @@ export const coursesExtra: Course[] = [
     bestMonths: [3, 4, 5, 6, 7, 8],
     narrowRoadWarning: false,
     suitableFor: ["軽", "ミニバン", "スポーツ", "EV", "オープン"],
-    center: { lat: 26.15, lng: 127.78 },
+    center: { lat: 26.14324, lng: 127.77864 },
     path: routePaths["niraikanai-bridge"],
     spots: [
       {
@@ -2520,7 +2520,7 @@ export const coursesExtra: Course[] = [
         note: "世界遺産。琉球最高の聖地",
       },
     ],
-    elevationProfile: [40, 90, 160, 80, 20],
+    elevationProfile: [131, 162, 148, 142, 126, 89, 45, 61, 69],
     heroImage: "/images/courses/niraikanai-bridge/hero.jpg",
     gallery: ["/images/courses/niraikanai-bridge/gallery-1.jpg"],
     body: [

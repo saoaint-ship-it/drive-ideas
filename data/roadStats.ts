@@ -12,13 +12,13 @@ export type RoadStats = {
 export const roadStats: Record<string, RoadStats> = {
  "sky-road-shari": {
   "hairpins": 0,
-  "corners": 4,
-  "maxGradientPct": 0.4
+  "corners": 5,
+  "maxGradientPct": 1.7
  },
  "irohazaka": {
   "hairpins": 37,
   "corners": 81,
-  "maxGradientPct": 5
+  "maxGradientPct": 10.2
  },
  "venus-line": {
   "hairpins": 5,
@@ -33,7 +33,7 @@ export const roadStats: Record<string, RoadStats> = {
  "tsunoshima-ohashi": {
   "hairpins": 0,
   "corners": 18,
-  "maxGradientPct": 0.4
+  "maxGradientPct": 3.4
  },
  "aso-panorama-line": {
   "hairpins": 3,
@@ -43,12 +43,12 @@ export const roadStats: Record<string, RoadStats> = {
  "bandai-azuma-skyline": {
   "hairpins": 10,
   "corners": 83,
-  "maxGradientPct": 5.6
+  "maxGradientPct": 8.9
  },
  "hachimantai-aspite-line": {
-  "hairpins": 1,
-  "corners": 75,
-  "maxGradientPct": 7.4
+  "hairpins": 3,
+  "corners": 60,
+  "maxGradientPct": 8.1
  },
  "izu-skyline": {
   "hairpins": 4,
@@ -66,14 +66,14 @@ export const roadStats: Record<string, RoadStats> = {
   "maxGradientPct": 0.8
  },
  "ufo-line": {
-  "hairpins": 13,
-  "corners": 48,
-  "maxGradientPct": 5.2
+  "hairpins": 4,
+  "corners": 41,
+  "maxGradientPct": 6.1
  },
  "shiretoko-odan": {
   "hairpins": 3,
   "corners": 46,
-  "maxGradientPct": 6.3
+  "maxGradientPct": 7.8
  },
  "biei-patchwork": {
   "hairpins": 0,
@@ -83,17 +83,17 @@ export const roadStats: Record<string, RoadStats> = {
  "naitai-kogen": {
   "hairpins": 3,
   "corners": 30,
-  "maxGradientPct": 2.8
+  "maxGradientPct": 4.9
  },
  "ororon-line": {
   "hairpins": 0,
   "corners": 30,
-  "maxGradientPct": 0.3
+  "maxGradientPct": 2.2
  },
  "shakotan-blue-road": {
   "hairpins": 1,
   "corners": 33,
-  "maxGradientPct": 0.5
+  "maxGradientPct": 2.1
  },
  "zao-echo-line": {
   "hairpins": 9,
@@ -108,12 +108,12 @@ export const roadStats: Record<string, RoadStats> = {
  "towada-oirase": {
   "hairpins": 0,
   "corners": 6,
-  "maxGradientPct": 2
+  "maxGradientPct": 3.8
  },
  "bandai-gold-line": {
   "hairpins": 5,
   "corners": 55,
-  "maxGradientPct": 4.3
+  "maxGradientPct": 6.9
  },
  "kusatsu-shiga": {
   "hairpins": 7,
@@ -177,13 +177,13 @@ export const roadStats: Record<string, RoadStats> = {
  },
  "mikatagoko-rainbow-line": {
   "hairpins": 0,
-  "corners": 22,
-  "maxGradientPct": 4.6
+  "corners": 12,
+  "maxGradientPct": 10.2
  },
  "koya-ryujin-skyline": {
   "hairpins": 5,
   "corners": 54,
-  "maxGradientPct": 5.9
+  "maxGradientPct": 7.4
  },
  "ise-shima-skyline": {
   "hairpins": 1,
@@ -216,9 +216,9 @@ export const roadStats: Record<string, RoadStats> = {
   "maxGradientPct": 2.9
  },
  "washuzan-skyline": {
-  "hairpins": 0,
-  "corners": 5,
-  "maxGradientPct": 3
+  "hairpins": 4,
+  "corners": 35,
+  "maxGradientPct": 6.5
  },
  "shikoku-karst": {
   "hairpins": 6,
@@ -228,7 +228,7 @@ export const roadStats: Record<string, RoadStats> = {
  "yokonami-kuroshio-line": {
   "hairpins": 1,
   "corners": 43,
-  "maxGradientPct": 1.5
+  "maxGradientPct": 0.6
  },
  "sadamisaki-melody-line": {
   "hairpins": 0,
@@ -238,7 +238,7 @@ export const roadStats: Record<string, RoadStats> = {
  "yamanami-highway": {
   "hairpins": 1,
   "corners": 28,
-  "maxGradientPct": 3.4
+  "maxGradientPct": 4
  },
  "ibusuki-skyline": {
   "hairpins": 0,
@@ -258,7 +258,7 @@ export const roadStats: Record<string, RoadStats> = {
  "niraikanai-bridge": {
   "hairpins": 2,
   "corners": 12,
-  "maxGradientPct": 4.6
+  "maxGradientPct": 9.5
  },
  "irabu-bridge": {
   "hairpins": 0,
@@ -298,7 +298,7 @@ export const roadStats: Record<string, RoadStats> = {
  "soya-white-road": {
   "hairpins": 0,
   "corners": 1,
-  "maxGradientPct": 0.6
+  "maxGradientPct": 7.3
  },
  "esanuka-line": {
   "hairpins": 1,
