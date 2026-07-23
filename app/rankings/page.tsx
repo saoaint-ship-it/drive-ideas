@@ -52,7 +52,13 @@ export default function RankingsPage() {
           「一番ヘアピンが多い峠は？」「一番標高が高い道は？」——
           感覚ではなくデータで選べるのが、このデータベースの強みです。
         </p>
-        <div className="mt-5">
+        <div className="mt-5 flex flex-wrap gap-2">
+          <Link
+            href="/records"
+            className="inline-block border border-line px-4 py-2 text-xs transition-colors hover:border-black/40"
+          >
+            日本一の道をまとめて見る →
+          </Link>
           <Link
             href="/compare"
             className="inline-block border border-line px-4 py-2 text-xs transition-colors hover:border-black/40"

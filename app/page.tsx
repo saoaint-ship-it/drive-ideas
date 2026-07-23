@@ -280,6 +280,27 @@ export default function Home() {
         </Link>
       </section>
 
+      {/* 4.5 日本記録ページへの導線 */}
+      <section className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-32">
+        <Reveal>
+          <Link
+            href="/records"
+            className="group block border border-line p-8 transition-colors hover:border-black/40 md:p-12"
+          >
+            <p className="label-en">Japan Records</p>
+            <h2 className="mt-3 text-2xl font-medium leading-snug md:text-4xl">
+              絶景ロードの、日本記録。
+            </h2>
+            <p className="prose-jp mt-4 max-w-xl text-sm text-muted">
+              標高日本一、カーブ日本一、勾配日本一——全98コースの実データから選んだ「日本一」の道たち。数字で見る、絶景の頂点。
+            </p>
+            <span className="mt-8 inline-block text-sm underline underline-offset-4 transition-colors group-hover:text-signal">
+              日本一の道を見る →
+            </span>
+          </Link>
+        </Reveal>
+      </section>
+
       {/* 5. VIDEOS: 動画で巡る絶景ドライブ */}
       <section className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-40">
         <Reveal>
