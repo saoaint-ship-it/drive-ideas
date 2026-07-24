@@ -12,7 +12,7 @@ export type RoadStats = {
 export const roadStats: Record<string, RoadStats> = {
  "sky-road-shari": {
   "hairpins": 0,
-  "corners": 5,
+  "corners": 2,
   "maxGradientPct": 1.7
  },
  "irohazaka": {
@@ -402,8 +402,8 @@ export const roadStats: Record<string, RoadStats> = {
  },
  "jet-coaster-road": {
   "hairpins": 0,
-  "corners": 8,
-  "maxGradientPct": 3.8
+  "corners": 0,
+  "maxGradientPct": 5.4
  },
  "biei-panorama-road": {
   "hairpins": 0,
