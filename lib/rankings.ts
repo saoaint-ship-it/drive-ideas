@@ -16,6 +16,7 @@ export type RankingMetric = {
   note: string; // 数値の出どころ・注意書き
   value: (c: Course) => number | null; // 対象外は null
   format: (v: number) => string;
+  sort?: "asc" | "desc"; // 既定はdesc（値が大きいほど1位）。ascなら値が小さいほど1位
 };
 
 export const RANKING_METRICS: RankingMetric[] = [
@@ -85,6 +86,34 @@ export const RANKING_METRICS: RankingMetric[] = [
     value: (c) => c.elevationGainM,
     format: (v) => `${v.toLocaleString()}m`,
   },
+  {
+    key: "spots",
+    label: "立ち寄りスポットが多い道",
+    short: "スポットの多さ",
+    labelEn: "Most Spots",
+    unit: "件",
+    lead: "展望台・道の駅・撮影ポイントなど、立ち寄りスポットの登録数が多い順。休憩や写真映えする場所に困らない道の指標。",
+    note: "コースページに登録している立ち寄りスポットの件数。",
+    value: (c) => c.spots.length,
+    format: (v) => `${v.toLocaleString()}件`,
+  },
+  {
+    key: "quick",
+    label: "気軽に走れる道",
+    short: "所要時間の短さ",
+    labelEn: "Quickest Drive",
+    unit: "分",
+    lead: "休憩なしの走破時間が短い順。「ちょっと走りたい」ときにすぐ楽しめる、気軽なドライブの指標。",
+    note: "休憩を含まない走破時間の目安（分）。短いほど上位。",
+    value: (c) => c.durationMin,
+    format: (v) => {
+      if (v < 60) return `${v}分`;
+      const h = Math.floor(v / 60);
+      const m = v % 60;
+      return m === 0 ? `${h}時間` : `${h}時間${m}分`;
+    },
+    sort: "asc",
+  },
 ];
 
 export function getMetric(key: string): RankingMetric | undefined {
@@ -96,10 +125,11 @@ export type RankedCourse = { course: Course; value: number; rank: number };
 // 指定指標での全コースの順位。値が大きいほど上位。
 // 同値は同順位（標準的な競技順位: 1,2,2,4…）。
 export function getRanking(metric: RankingMetric, limit?: number): RankedCourse[] {
+  const dir = metric.sort === "asc" ? 1 : -1;
   const rows = getAllCourses()
     .map((c) => ({ course: c, value: metric.value(c) }))
     .filter((r): r is { course: Course; value: number } => r.value !== null)
-    .sort((a, b) => b.value - a.value);
+    .sort((a, b) => (a.value - b.value) * dir);
 
   const ranked: RankedCourse[] = [];
   rows.forEach((r, i) => {

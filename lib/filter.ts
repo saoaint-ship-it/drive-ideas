@@ -41,6 +41,7 @@ export const SORT_OPTIONS: { value: string; label: string }[] = [
   { value: "hairpins-desc", label: "ヘアピンが多い順" },
   { value: "corners-desc", label: "カーブが多い順" },
   { value: "gradient-desc", label: "最大勾配がきつい順" },
+  { value: "spots-desc", label: "立ち寄りスポットが多い順" },
 ];
 
 function sortValue(c: Course, sort: string): number {
@@ -58,6 +59,8 @@ function sortValue(c: Course, sort: string): number {
       return roadStats[c.slug]?.corners ?? -1;
     case "gradient-desc":
       return roadStats[c.slug]?.maxGradientPct ?? -1;
+    case "spots-desc":
+      return c.spots.length;
     default:
       return 0;
   }
