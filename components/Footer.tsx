@@ -33,6 +33,11 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/closures" className="text-muted hover:text-text">
+                    冬季閉鎖・通行規制
+                  </Link>
+                </li>
+                <li>
                   <Link href="/about" className="text-muted hover:text-text">
                     このサイトについて
                   </Link>

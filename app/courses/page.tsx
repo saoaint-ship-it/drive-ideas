@@ -52,6 +52,12 @@ export default function CoursesPage() {
           >
             コースを比較する →
           </Link>
+          <Link
+            href="/closures"
+            className="px-2 py-1.5 text-xs text-muted transition-colors hover:text-text"
+          >
+            冬季閉鎖・通行規制まとめ →
+          </Link>
         </div>
       </div>
       <div className="mt-10">
