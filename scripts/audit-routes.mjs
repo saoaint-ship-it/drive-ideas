@@ -30,15 +30,11 @@ pathsSrc = pathsSrc.replace(/^\s*\/\/.*$/gm, "");
 pathsSrc = pathsSrc.replace(/export const routePaths[^=]*=/, "return ");
 const routePaths = new Function(pathsSrc)();
 
-const files = [
-  "data/courses.ts",
-  "data/courses-extra.ts",
-  "data/courses-extra2.ts",
-  "data/courses-extra3.ts",
-  "data/courses-extra4.ts",
-  "data/courses-extra5.ts",
-  "data/courses-extra6.ts",
-];
+// data配下の courses*.ts を自動で全部拾う（ファイルが増えても取りこぼさない）
+import { readdirSync } from "fs";
+const files = readdirSync(path.join(root, "data"))
+  .filter((f) => /^courses.*\.ts$/.test(f))
+  .map((f) => `data/${f}`);
 const courses = [];
 for (const f of files) {
   const t = readFileSync(path.join(root, f), "utf8");

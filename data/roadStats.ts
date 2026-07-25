@@ -539,5 +539,60 @@ export const roadStats: Record<string, RoadStats> = {
   "hairpins": 0,
   "corners": 15,
   "maxGradientPct": 1.9
+ },
+ "akinada-tobishima": {
+  "hairpins": 0,
+  "corners": 22,
+  "maxGradientPct": 1.1
+ },
+ "daisen-kanjo": {
+  "hairpins": 1,
+  "corners": 35,
+  "maxGradientPct": 11.1
+ },
+ "norosan-sazanami": {
+  "hairpins": 2,
+  "corners": 23,
+  "maxGradientPct": 11.2
+ },
+ "okuizumo-orochi": {
+  "hairpins": 1,
+  "corners": 4,
+  "maxGradientPct": 26.2
+ },
+ "yuyake-koyake-378": {
+  "hairpins": 0,
+  "corners": 4,
+  "maxGradientPct": 1
+ },
+ "ishizuchi-skyline": {
+  "hairpins": 3,
+  "corners": 55,
+  "maxGradientPct": 8
+ },
+ "naruto-skyline": {
+  "hairpins": 0,
+  "corners": 23,
+  "maxGradientPct": 2.6
+ },
+ "goshikidai-skyline": {
+  "hairpins": 0,
+  "corners": 33,
+  "maxGradientPct": 6.9
+ },
+ "ashizuri-sunny-road": {
+  "hairpins": 3,
+  "corners": 27,
+  "maxGradientPct": 2.7
+ },
+ "muroto-skyline": {
+  "hairpins": 5,
+  "corners": 26,
+  "maxGradientPct": 7.3
+ },
+ "suo-oshima-orange": {
+  "hairpins": 0,
+  "corners": 22,
+  "maxGradientPct": 4.6
  }
 };
