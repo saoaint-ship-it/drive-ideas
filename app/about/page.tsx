@@ -35,6 +35,13 @@ export default function AboutPage() {
         <p>
           実走の様子はYouTubeで、日々の情報はXで発信しています。
         </p>
+        <p>
+          表示している数値の算出方法は、
+          <Link href="/methodology" className="underline hover:text-text">
+            データの出どころページ
+          </Link>
+          で詳しく説明しています。
+        </p>
       </div>
 
       <div className="mt-12 flex gap-4">

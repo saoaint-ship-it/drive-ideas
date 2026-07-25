@@ -38,6 +38,11 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/methodology" className="text-muted hover:text-text">
+                    データの出どころ
+                  </Link>
+                </li>
+                <li>
                   <Link href="/about" className="text-muted hover:text-text">
                     このサイトについて
                   </Link>
