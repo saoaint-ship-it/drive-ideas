@@ -594,5 +594,15 @@ export const roadStats: Record<string, RoadStats> = {
   "hairpins": 0,
   "corners": 22,
   "maxGradientPct": 4.6
+ },
+ "utsumi-ohashi": {
+  "hairpins": 2,
+  "corners": 28,
+  "maxGradientPct": 5.1
+ },
+ "nakaumi-teibo": {
+  "hairpins": 0,
+  "corners": 14,
+  "maxGradientPct": 0.9
  }
 };
