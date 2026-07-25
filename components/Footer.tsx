@@ -43,6 +43,11 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/updates" className="text-muted hover:text-text">
+                    更新履歴
+                  </Link>
+                </li>
+                <li>
                   <Link href="/about" className="text-muted hover:text-text">
                     このサイトについて
                   </Link>
