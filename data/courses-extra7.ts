@@ -63,7 +63,7 @@ export const coursesExtra7: Course[] = [
     ],
     elevationProfile: [0, 36, 5, 26, 10, 0, 9, 19, 0],
     heroImage: "/images/courses/akinada-tobishima/hero.jpg",
-    gallery: ["/images/courses/akinada-tobishima/gallery-1.jpg"],
+    gallery: ["/images/courses/akinada-tobishima/gallery-1.jpg", "/images/courses/akinada-tobishima/gallery-2.jpg"],
     body: [
       {
         heading: "「もう一つのしまなみ」を静かに走る",
@@ -129,7 +129,7 @@ export const coursesExtra7: Course[] = [
     ],
     elevationProfile: [552, 643, 721, 910, 913, 901, 775, 693, 676],
     heroImage: "/images/courses/daisen-kanjo/hero.jpg",
-    gallery: ["/images/courses/daisen-kanjo/gallery-1.jpg"],
+    gallery: ["/images/courses/daisen-kanjo/gallery-1.jpg", "/images/courses/daisen-kanjo/gallery-2.jpg"],
     body: [
       {
         heading: "見る角度で山容が変わる山",
@@ -195,7 +195,7 @@ export const coursesExtra7: Course[] = [
     ],
     elevationProfile: [388, 445, 482, 547, 580, 654, 707, 740, 754],
     heroImage: "/images/courses/norosan-sazanami/hero.jpg",
-    gallery: ["/images/courses/norosan-sazanami/gallery-1.jpg"],
+    gallery: ["/images/courses/norosan-sazanami/gallery-1.jpg", "/images/courses/norosan-sazanami/gallery-2.jpg"],
     body: [
       {
         heading: "海の絶景へ、一気に登る",
@@ -254,7 +254,7 @@ export const coursesExtra7: Course[] = [
     ],
     elevationProfile: [725, 728, 643, 688, 685, 665, 690, 699, 714],
     heroImage: "/images/courses/okuizumo-orochi/hero.jpg",
-    gallery: ["/images/courses/okuizumo-orochi/gallery-1.jpg"],
+    gallery: ["/images/courses/okuizumo-orochi/gallery-1.jpg", "/images/courses/okuizumo-orochi/gallery-2.jpg"],
     body: [
       {
         heading: "らせんで高低差を稼ぐ道路",
@@ -320,7 +320,7 @@ export const coursesExtra7: Course[] = [
     ],
     elevationProfile: [6, 12, 9, 10, 8, 14, 7, 12, 38],
     heroImage: "/images/courses/yuyake-koyake-378/hero.jpg",
-    gallery: ["/images/courses/yuyake-koyake-378/gallery-1.jpg"],
+    gallery: ["/images/courses/yuyake-koyake-378/gallery-1.jpg", "/images/courses/yuyake-koyake-378/gallery-2.jpg"],
     body: [
       {
         heading: "『海に一番近い駅』下灘駅",
@@ -384,7 +384,7 @@ export const coursesExtra7: Course[] = [
     ],
     elevationProfile: [668, 847, 996, 1111, 1004, 1122, 1262, 1378, 1501],
     heroImage: "/images/courses/ishizuchi-skyline/hero.jpg",
-    gallery: ["/images/courses/ishizuchi-skyline/gallery-1.jpg"],
+    gallery: ["/images/courses/ishizuchi-skyline/gallery-1.jpg", "/images/courses/ishizuchi-skyline/gallery-2.jpg"],
     body: [
       {
         heading: "四国の屋根へ登る",
@@ -450,7 +450,7 @@ export const coursesExtra7: Course[] = [
     ],
     elevationProfile: [54, 22, 62, 93, 54, 16, 43, 16, 7],
     heroImage: "/images/courses/naruto-skyline/hero.jpg",
-    gallery: ["/images/courses/naruto-skyline/gallery-1.jpg"],
+    gallery: ["/images/courses/naruto-skyline/gallery-1.jpg", "/images/courses/naruto-skyline/gallery-2.jpg"],
     body: [
       {
         heading: "外海と内海を同時に見る道",
@@ -516,7 +516,7 @@ export const coursesExtra7: Course[] = [
     ],
     elevationProfile: [14, 11, 82, 162, 273, 407, 393, 469, 383],
     heroImage: "/images/courses/goshikidai-skyline/hero.jpg",
-    gallery: ["/images/courses/goshikidai-skyline/gallery-1.jpg"],
+    gallery: ["/images/courses/goshikidai-skyline/gallery-1.jpg", "/images/courses/goshikidai-skyline/gallery-2.jpg"],
     body: [
       {
         heading: "5つの色の峰を持つ台地",
@@ -582,7 +582,7 @@ export const coursesExtra7: Course[] = [
     ],
     elevationProfile: [22, 10, 5, 4, 8, 56, 62, 106, 195],
     heroImage: "/images/courses/ashizuri-sunny-road/hero.jpg",
-    gallery: ["/images/courses/ashizuri-sunny-road/gallery-1.jpg"],
+    gallery: ["/images/courses/ashizuri-sunny-road/gallery-1.jpg", "/images/courses/ashizuri-sunny-road/gallery-2.jpg"],
     body: [
       {
         heading: "黒潮あらう四国最南端",
@@ -648,7 +648,7 @@ export const coursesExtra7: Course[] = [
     ],
     elevationProfile: [10, 73, 163, 208, 215, 208, 180, 95, 13],
     heroImage: "/images/courses/muroto-skyline/hero.jpg",
-    gallery: ["/images/courses/muroto-skyline/gallery-1.jpg"],
+    gallery: ["/images/courses/muroto-skyline/gallery-1.jpg", "/images/courses/muroto-skyline/gallery-2.jpg"],
     body: [
       {
         heading: "岬の尾根を走る",
@@ -707,7 +707,7 @@ export const coursesExtra7: Course[] = [
     ],
     elevationProfile: [78, 117, 116, 120, 99, 87, 119, 136, 145],
     heroImage: "/images/courses/suo-oshima-orange/hero.jpg",
-    gallery: ["/images/courses/suo-oshima-orange/gallery-1.jpg"],
+    gallery: ["/images/courses/suo-oshima-orange/gallery-1.jpg", "/images/courses/suo-oshima-orange/gallery-2.jpg"],
     body: [
       {
         heading: "『瀬戸内のハワイ』を走る",
@@ -773,7 +773,7 @@ export const coursesExtra7: Course[] = [
     ],
     elevationProfile: [38, 9, 4, 18, 0, 0, 7, 91, 171],
     heroImage: "/images/courses/utsumi-ohashi/hero.jpg",
-    gallery: ["/images/courses/utsumi-ohashi/gallery-1.jpg"],
+    gallery: ["/images/courses/utsumi-ohashi/gallery-1.jpg", "/images/courses/utsumi-ohashi/gallery-2.jpg"],
     body: [
       {
         heading: "海の上で曲がる、珍しい橋",
@@ -839,7 +839,7 @@ export const coursesExtra7: Course[] = [
     ],
     elevationProfile: [9, 4, 9, 13, 19, 4, 0, 11, 6],
     heroImage: "/images/courses/nakaumi-teibo/hero.jpg",
-    gallery: ["/images/courses/nakaumi-teibo/gallery-1.jpg"],
+    gallery: ["/images/courses/nakaumi-teibo/gallery-1.jpg", "/images/courses/nakaumi-teibo/gallery-2.jpg"],
     body: [
       {
         heading: "湖の上を、まっすぐ渡る堤防道路",

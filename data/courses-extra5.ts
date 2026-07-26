@@ -53,7 +53,7 @@ export const coursesExtra5: Course[] = [
     ],
     elevationProfile: [36, 10, 11, 22, 21, 33, 35, 39, 62],
     heroImage: "/images/courses/shirasaki-coast/hero.jpg",
-    gallery: [],
+    gallery: ["/images/courses/shirasaki-coast/gallery-1.jpg", "/images/courses/shirasaki-coast/gallery-2.jpg"],
     body: [
       {
         heading: "石灰岩が生んだ、地中海のような白い岬",
@@ -252,7 +252,7 @@ export const coursesExtra5: Course[] = [
     ],
     elevationProfile: [391, 430, 494, 500, 570, 646, 702, 727, 747],
     heroImage: "/images/courses/akan-crossing-road/hero.jpg",
-    gallery: [],
+    gallery: ["/images/courses/akan-crossing-road/gallery-1.jpg", "/images/courses/akan-crossing-road/gallery-2.jpg"],
     body: [
       {
         heading: "阿寒摩周国立公園を貫く峠道",
@@ -321,7 +321,7 @@ export const coursesExtra5: Course[] = [
     ],
     elevationProfile: [948, 976, 1022, 1029, 1005, 977, 931, 892, 856],
     heroImage: "/images/courses/hakkoda-towada-gold-line/hero.jpg",
-    gallery: [],
+    gallery: ["/images/courses/hakkoda-towada-gold-line/gallery-1.jpg", "/images/courses/hakkoda-towada-gold-line/gallery-2.jpg"],
     body: [
       {
         heading: "八甲田の山岳地帯を抜けるゴールドライン",
@@ -581,7 +581,7 @@ export const coursesExtra5: Course[] = [
     ],
     elevationProfile: [1, 2, 7, 8, 7, 7, 8, 8, 9],
     heroImage: "/images/courses/isahaya-bay-levee/hero.jpg",
-    gallery: [],
+    gallery: ["/images/courses/isahaya-bay-levee/gallery-1.jpg", "/images/courses/isahaya-bay-levee/gallery-2.jpg"],
     body: [
       {
         heading: "干拓事業がつくった、人工の直線道路",
@@ -646,7 +646,7 @@ export const coursesExtra5: Course[] = [
     ],
     elevationProfile: [16, 12, 15, 7, 0, 2, 5, 6, 6],
     heroImage: "/images/courses/kouri-bridge/hero.jpg",
-    gallery: [],
+    gallery: ["/images/courses/kouri-bridge/gallery-1.jpg", "/images/courses/kouri-bridge/gallery-2.jpg"],
     body: [
       {
         heading: "透明度の高い海を渡る、沖縄離島の名物橋",

@@ -61,7 +61,7 @@ export const coursesExtra6: Course[] = [
     ],
     elevationProfile: [385, 421, 487, 532, 608, 584, 473, 471, 585],
     heroImage: "/images/courses/okuoi-sesso/hero.jpg",
-    gallery: ["/images/courses/okuoi-sesso/gallery-1.jpg"],
+    gallery: ["/images/courses/okuoi-sesso/gallery-1.jpg", "/images/courses/okuoi-sesso/gallery-2.jpg"],
     body: [
       {
         heading: "「レインボーブリッジ」は、鉄道の橋",
@@ -127,7 +127,7 @@ export const coursesExtra6: Course[] = [
     ],
     elevationProfile: [206, 293, 429, 527, 628, 813, 841, 932, 1128],
     heroImage: "/images/courses/seseragi-kaido/hero.jpg",
-    gallery: ["/images/courses/seseragi-kaido/gallery-1.jpg"],
+    gallery: ["/images/courses/seseragi-kaido/gallery-1.jpg", "/images/courses/seseragi-kaido/gallery-2.jpg"],
     body: [
       {
         heading: "ずっと川が隣にいる、珍しい国道",
@@ -193,7 +193,7 @@ export const coursesExtra6: Course[] = [
     ],
     elevationProfile: [19, 45, 15, 6, 10, 40, 61, 54, 39],
     heroImage: "/images/courses/noto-kongo/hero.jpg",
-    gallery: ["/images/courses/noto-kongo/gallery-1.jpg"],
+    gallery: ["/images/courses/noto-kongo/gallery-1.jpg", "/images/courses/noto-kongo/gallery-2.jpg"],
     body: [
       {
         heading: "約30kmにわたる、奇岩の海岸",
@@ -266,7 +266,7 @@ export const coursesExtra6: Course[] = [
     ],
     elevationProfile: [10, 21, 19, 7, 33, 23, 95, 183, 118],
     heroImage: "/images/courses/echizen-coast-305/hero.jpg",
-    gallery: ["/images/courses/echizen-coast-305/gallery-1.jpg"],
+    gallery: ["/images/courses/echizen-coast-305/gallery-1.jpg", "/images/courses/echizen-coast-305/gallery-2.jpg"],
     body: [
       {
         heading: "海面すれすれから、断崖の上へ",
@@ -333,7 +333,7 @@ export const coursesExtra6: Course[] = [
     ],
     elevationProfile: [0, 41, 44, 143, 147, 93, 113, 112, 0],
     heroImage: "/images/courses/pearl-road/hero.jpg",
-    gallery: ["/images/courses/pearl-road/gallery-1.jpg"],
+    gallery: ["/images/courses/pearl-road/gallery-1.jpg", "/images/courses/pearl-road/gallery-2.jpg"],
     body: [
       {
         heading: "海の「上」ではなく「上から」を走る道",
@@ -400,7 +400,7 @@ export const coursesExtra6: Course[] = [
     ],
     elevationProfile: [0, 25, 27, 6, 34, 25, 11, 8, 0],
     heroImage: "/images/courses/notojima-loop/hero.jpg",
-    gallery: ["/images/courses/notojima-loop/gallery-1.jpg"],
+    gallery: ["/images/courses/notojima-loop/gallery-1.jpg", "/images/courses/notojima-loop/gallery-2.jpg"],
     body: [
       {
         heading: "行きと帰りで、違う橋を渡る",
@@ -473,7 +473,7 @@ export const coursesExtra6: Course[] = [
     ],
     elevationProfile: [9, 11, 25, 47, 71, 247, 143, 147, 9],
     heroImage: "/images/courses/nishiizu-kendo17/hero.jpg",
-    gallery: ["/images/courses/nishiizu-kendo17/gallery-1.jpg"],
+    gallery: ["/images/courses/nishiizu-kendo17/gallery-1.jpg", "/images/courses/nishiizu-kendo17/gallery-2.jpg"],
     body: [
       {
         heading: "海の向こうに富士山が見える、数少ない道",
@@ -539,7 +539,7 @@ export const coursesExtra6: Course[] = [
     ],
     elevationProfile: [7, 36, 59, 0, 7, 15, 6, 3, 7],
     heroImage: "/images/courses/r249-okunoto/hero.jpg",
-    gallery: ["/images/courses/r249-okunoto/gallery-1.jpg"],
+    gallery: ["/images/courses/r249-okunoto/gallery-1.jpg", "/images/courses/r249-okunoto/gallery-2.jpg"],
     body: [
       {
         heading: "国道から直接見える、世界農業遺産の棚田",
